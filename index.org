@@ -430,7 +430,14 @@ ipfs get <cid>
 
 ** https://multiformats.io/
 
-* VI - Practice makes perfect
+[[https://docs.google.com/presentation/d/1wyrTNTERJV23R7PyLrNloBauygdq1SXerijvEUG62xI/edit#slide=id.g62101298e7_9_382][Gdoc]]
+
+** DHT
+
+- [[https://zestedesavoir.com/billets/3310/p2p-internals-3/][Zeste de savoir : p2p internals 3]]
+- [[https://www.youtube.com/watch?v=WeXRfWJ2snA][Wandida DHT Pastry Anne-Marie de Kermarrec]]
+
+* VI - Roadmap
 
 ** Browser upgrade path
 
@@ -441,6 +448,10 @@ ipfs get <cid>
 - [X] browser extensions
 - [-] native in browsers
 
+** OS
+
+- [ ] ipfs native in OS
+- [ ] OSes native in ipfs
 
 * VII - IPFS: le futur ?
 
