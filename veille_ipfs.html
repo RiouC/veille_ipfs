@@ -10,6 +10,17 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/black.css" id="theme"/>
 
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
 <link rel="stylesheet" type="text/css" href="/asciinema-player.css" />
 <link rel="stylesheet" type="text/css" href="./css/slides.css" />
 </head>
@@ -21,38 +32,38 @@
 
 
 <section>
-<section id="slide-orgeef9f73">
-<h2 id="orgeef9f73">Sommaire</h2>
-<div class="outline-text-2" id="text-orgeef9f73">
+<section id="slide-org9fcf2b9">
+<h2 id="org9fcf2b9">Sommaire</h2>
+<div class="outline-text-2" id="text-org9fcf2b9">
 </div>
 <ul class="org-ul">
-<li><a id="org835e301"></a>I - Introduction<br /></li>
-<li><a id="org61017ee"></a>II - What is wrong with the Internet ?<br /></li>
-<li><a id="orgefcb8b5"></a>III - Basic Concepts<br /></li>
-<li><a id="orgf5b1d23"></a>IV - Basic Commands<br /></li>
-<li><a id="org9fba24c"></a>V - Advanced Concepts<br /></li>
-<li><a id="orgd3ce9fe"></a>VI - Practice makes perfect<br /></li>
-<li><a id="orgd1cb12e"></a>VII - IPFS: le futur ?<br /></li>
-<li><a id="org2a03096"></a>VIII - Links, resources &amp; Programs / Services used<br /></li>
+<li><a id="org5586718"></a>I - Introduction<br /></li>
+<li><a id="org26ecf16"></a>II - What is wrong with the Internet ?<br /></li>
+<li><a id="org77a60c8"></a>III - Basic Concepts<br /></li>
+<li><a id="org9c07076"></a>IV - Basic Commands<br /></li>
+<li><a id="org2e41cc8"></a>V - Advanced Concepts<br /></li>
+<li><a id="orgab91b40"></a>VI - Practice makes perfect<br /></li>
+<li><a id="org96cdc79"></a>VII - IPFS: le futur ?<br /></li>
+<li><a id="orgddccd34"></a>VIII - Links, resources &amp; Programs / Services used<br /></li>
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org2e40fb7">
-<h2 id="org2e40fb7">I - Introduction</h2>
-<div class="outline-text-2" id="text-org2e40fb7">
+<section id="slide-org7546d97">
+<h2 id="org7546d97">I - Introduction</h2>
+<div class="outline-text-2" id="text-org7546d97">
 </div>
 </section>
-<section id="slide-org136abb2">
-<h3 id="org136abb2">Definition</h3>
+<section id="slide-org4f646da">
+<h3 id="org4f646da">Definition</h3>
 <p>
 IPFS = InterPlanetary File System
 </p>
 
 </section>
-<section id="slide-org7490f7c">
-<h3 id="org7490f7c">Protocol Labs</h3>
+<section id="slide-org07b7b02">
+<h3 id="org07b7b02">Protocol Labs</h3>
 <p>
 <a href="https://protocol.ai/">https://protocol.ai/</a>
 </p>
@@ -62,14 +73,14 @@ By Juan Benet in May 2014
 </p>
 
 
-<div id="org0dbbb29" class="figure">
+<div id="org5915a4f" class="figure">
 <p><a href="images/Juan_Benet_headshot_small.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/Juan_Benet_headshot_small.png" alt="Juan_Benet_headshot_small.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-orgc87c287">
-<h3 id="orgc87c287">Some of their creations</h3>
+<section id="slide-org541e1c1">
+<h3 id="org541e1c1">Some of their creations</h3>
 <ul>
 <li>IPFS</li>
 <li>FileCoin</li>
@@ -83,8 +94,8 @@ By Juan Benet in May 2014
 </p>
 
 </section>
-<section id="slide-org86fb430">
-<h3 id="org86fb430">Trivia</h3>
+<section id="slide-org6f4a256">
+<h3 id="org6f4a256">Trivia</h3>
 <ul>
 <li>In 2018, Benet was named one of Fortune magazine's "40 under 40" in recognition of his work creating IPFS.</li>
 <li><p>
@@ -92,7 +103,7 @@ J.Benet is a patron on patreon of the youtube channel Veritasium
 </p>
 
 
-<div id="org61c2324" class="figure">
+<div id="orgbbe92c9" class="figure">
 <p><a href="images/jbenet_patreon_veritasium.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/jbenet_patreon_veritasium.png" alt="jbenet_patreon_veritasium.png" /></a>
 </p>
 </div></li>
@@ -102,25 +113,25 @@ J.Benet is a patron on patreon of the youtube channel Veritasium
 </section>
 </section>
 <section>
-<section id="slide-org53e5968">
-<h2 id="org53e5968">II - What's wrong with the Internet ?</h2>
-<div class="outline-text-2" id="text-org53e5968">
+<section id="slide-org74e9d4b">
+<h2 id="org74e9d4b">II - What's wrong with the Internet ?</h2>
+<div class="outline-text-2" id="text-org74e9d4b">
 </div>
 </section>
-<section id="slide-orgb8e11ce">
-<h3 id="orgb8e11ce">History</h3>
-<div class="outline-text-3" id="text-orgb8e11ce">
+<section id="slide-org363912e">
+<h3 id="org363912e">History</h3>
+<div class="outline-text-3" id="text-org363912e">
 </div>
 </section>
-<section id="slide-orgf969dd0">
-<h4 id="orgf969dd0">First computers</h4>
+<section id="slide-orgad865be">
+<h4 id="orgad865be">First computers</h4>
 <p>
 Prog + Data -&gt; Data
 </p>
 
 </section>
-<section id="slide-orga560a5f">
-<h4 id="orga560a5f">Combining programs / timesharing</h4>
+<section id="slide-orgd869b9b">
+<h4 id="orgd869b9b">Combining programs / timesharing</h4>
 <ul>
 <li>Multics</li>
 <li>Unix</li>
@@ -133,45 +144,45 @@ A sane way of sharing program and data
 </p>
 
 </section>
-<section id="slide-org8192c94">
-<h4 id="org8192c94">Mainframe / Terminals</h4>
+<section id="slide-org49fdb15">
+<h4 id="org49fdb15">Mainframe / Terminals</h4>
 
 </section>
-<section id="slide-org751ffb0">
-<h4 id="org751ffb0">More mainframes, but linked</h4>
+<section id="slide-org2aa5368">
+<h4 id="org2aa5368">More mainframes, but linked</h4>
 <p>
 Beginning of networking
 </p>
 
 </section>
-<section id="slide-orgf4b516b">
-<h4 id="orgf4b516b">PCs (personal computers)</h4>
+<section id="slide-orgfb888bd">
+<h4 id="orgfb888bd">PCs (personal computers)</h4>
 
 </section>
-<section id="slide-org4ee3560">
-<h4 id="org4ee3560">Internet</h4>
+<section id="slide-org7515f45">
+<h4 id="org7515f45">Internet</h4>
 <p>
 Internet is the solution to link all the PCs together, like we did before with the mainframes.
 </p>
 
 </section>
-<section id="slide-orga03c3df">
-<h4 id="orga03c3df">The Web</h4>
+<section id="slide-org56302a9">
+<h4 id="org56302a9">The Web</h4>
 <p>
 Data transmission between computers is becoming widely available.
 </p>
 
 </section>
-<section id="slide-org61b14e6">
-<h4 id="org61b14e6">Web2.0</h4>
+<section id="slide-orgda53e00">
+<h4 id="orgda53e00">Web2.0</h4>
 <p>
 Programs are also transmitted with data from the server to the client.
 But now, the client is subservient to the server.
 </p>
 
 </section>
-<section id="slide-org7b308c6">
-<h4 id="org7b308c6">Certify data</h4>
+<section id="slide-org16cd801">
+<h4 id="org16cd801">Certify data</h4>
 <ul>
 <li>Beginning of internet encryption</li>
 <li>Certificate authorities</li>
@@ -180,28 +191,28 @@ But now, the client is subservient to the server.
 </ul>
 
 </section>
-<section id="slide-orgd9aaff6">
-<h4 id="orgd9aaff6">Patterns repeat</h4>
+<section id="slide-orge5f7b1c">
+<h4 id="orge5f7b1c">Patterns repeat</h4>
 
 </section>
-<section id="slide-org5bd2a09">
-<h4 id="org5bd2a09">Decentralized web</h4>
+<section id="slide-orga110cba">
+<h4 id="orga110cba">Decentralized web</h4>
 <p>
 What if these links that refer to data were secured as well ?
 </p>
 
 </section>
-<section id="slide-orgaec78d4">
-<h3 id="orgaec78d4">IPFS</h3>
-<div class="outline-text-3" id="text-orgaec78d4">
+<section id="slide-org69f59f8">
+<h3 id="org69f59f8">IPFS</h3>
+<div class="outline-text-3" id="text-org69f59f8">
 </div>
 </section>
-<section id="slide-org383e7dc">
-<h4 id="org383e7dc">Separation of the Internets</h4>
+<section id="slide-orge06158b">
+<h4 id="orge06158b">Separation of the Internets</h4>
 
 </section>
-<section id="slide-org6e25db5">
-<h4 id="org6e25db5">A declaration of the independance of cyberspace</h4>
+<section id="slide-orgac00f42">
+<h4 id="orgac00f42">A declaration of the independance of cyberspace</h4>
 <ul>
 <li><a href="https://www.eff.org/cyberspace-independence">eff</a></li>
 <li><a href="https://en.wikipedia.org/wiki/A_Declaration_of_the_Independence_of_Cyberspace">wikipedia</a></li>
@@ -209,8 +220,8 @@ What if these links that refer to data were secured as well ?
 </ul>
 
 </section>
-<section id="slide-orgd9ec2a2">
-<h4 id="orgd9ec2a2">Issues tackled</h4>
+<section id="slide-org655dc2a">
+<h4 id="org655dc2a">Issues tackled</h4>
 <ul>
 <li>emerging networks</li>
 <li>links break</li>
@@ -223,32 +234,32 @@ What if these links that refer to data were secured as well ?
 </section>
 </section>
 <section>
-<section id="slide-org8c1e7e9">
-<h2 id="org8c1e7e9">III - Basic Concepts</h2>
-<div class="outline-text-2" id="text-org8c1e7e9">
+<section id="slide-org179788c">
+<h2 id="org179788c">III - Basic Concepts</h2>
+<div class="outline-text-2" id="text-org179788c">
 </div>
 </section>
-<section id="slide-orgc9b0933">
-<h3 id="orgc9b0933">What is it ?</h3>
+<section id="slide-org1c89827">
+<h3 id="org1c89827">What is it ?</h3>
 
-<div id="orgfcfb1b1" class="figure">
+<div id="orgbf29d9f" class="figure">
 <p><a href="images/ipfs_stack.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_stack.png" alt="ipfs_stack.png" /></a>
 </p>
 </div>
 
 
 </section>
-<section id="slide-org1441c8e">
-<h3 id="org1441c8e">How it works</h3>
+<section id="slide-org3ed0de4">
+<h3 id="org3ed0de4">How it works</h3>
 
-<div id="orgde5000e" class="figure">
+<div id="org56d7aae" class="figure">
 <p><a href="images/ipfs_overview.png" alt="medium-high"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_overview.png" alt="medium-high" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org31e4ac5">
-<h3 id="org31e4ac5">Location-based vs Content-based</h3>
+<section id="slide-orgebd5527">
+<h3 id="orgebd5527">Location-based vs Content-based</h3>
 <p>
 URL vs CID
 </p>
@@ -264,48 +275,48 @@ CID = Content Identifier
 </p>
 
 </section>
-<section id="slide-orga6e1065">
-<h3 id="orga6e1065">LifeCycle</h3>
+<section id="slide-orgeb5c9f2">
+<h3 id="orgeb5c9f2">LifeCycle</h3>
 
-<div id="org542fbf1" class="figure">
+<div id="org8b24608" class="figure">
 <p><a href="images/lifecycle.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/lifecycle.png" alt="lifecycle.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-orgaa2d1f7">
-<h3 id="orgaa2d1f7">Chunks</h3>
+<section id="slide-orgbc9cc42">
+<h3 id="orgbc9cc42">Chunks</h3>
 
-<div id="org05baee1" class="figure">
+<div id="orgb01764c" class="figure">
 <p><a href="images/chunking.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/chunking.png" alt="chunking.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org64c3876">
-<h3 id="org64c3876"></h3>
+<section id="slide-org8e3db48">
+<h3 id="org8e3db48"></h3>
 
-<div id="org4b620ed" class="figure">
+<div id="org6729469" class="figure">
 <p><a href="images/chunk_deduplication_1.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_deduplication_1.png" alt="chunk_deduplication_1.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org71d8f03">
-<h3 id="org71d8f03"></h3>
+<section id="slide-org022c530">
+<h3 id="org022c530"></h3>
 <p>
 We only have to store these chunks once.
 </p>
 
 
-<div id="org56b713e" class="figure">
+<div id="orgf7349d4" class="figure">
 <p><a href="images/chunk_deduplication_2.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_deduplication_2.png" alt="chunk_deduplication_2.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org7146e27">
-<h3 id="org7146e27"></h3>
+<section id="slide-org4a7853e">
+<h3 id="org4a7853e"></h3>
 <aside class="notes">
 <p>
 We can download a file piecewise, checking each piece as we get it.
@@ -315,14 +326,14 @@ We don't have to download the entire file first.
 </aside>
 
 
-<div id="orge6c8bdb" class="figure">
+<div id="orge9283c1" class="figure">
 <p><a href="images/chunk_piecewise_transfer.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_piecewise_transfer.png" alt="chunk_piecewise_transfer.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org168299f">
-<h3 id="org168299f"></h3>
+<section id="slide-org9dfe0ba">
+<h3 id="org9dfe0ba"></h3>
 <aside class="notes">
 <p>
 We can skip directly to the piece we care about.
@@ -332,102 +343,102 @@ We can even chunk a file such that the chunks align with logical boundaries (e.g
 </aside>
 
 
-<div id="org213d3a9" class="figure">
+<div id="org3c71539" class="figure">
 <p><a href="images/chunk_seeking.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_seeking.png" alt="chunk_seeking.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org7c411b4">
-<h3 id="org7c411b4"></h3>
+<section id="slide-org639ad11">
+<h3 id="org639ad11"></h3>
 
-<div id="orgc92fe91" class="figure">
+<div id="org89b6dc3" class="figure">
 <p><a href="images/unixfs_merkle_tree.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/unixfs_merkle_tree.png" alt="unixfs_merkle_tree.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org7842d22">
-<h3 id="org7842d22">Merkle {Tree, DAG, *}</h3>
+<section id="slide-org59c464b">
+<h3 id="org59c464b">Merkle {Tree, DAG, *}</h3>
 <p>
 DAG = directed acyclic graph
 </p>
 
 </section>
-<section id="slide-org6e990d9">
-<h3 id="org6e990d9">What is a Tree ?</h3>
+<section id="slide-org8cec354">
+<h3 id="org8cec354">What is a Tree ?</h3>
 
-<div id="org41bb253" class="figure">
+<div id="org912af63" class="figure">
 <p><a href="images/arbre_1.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/arbre.png" alt="arbre.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-orgfd2e48c">
-<h3 id="orgfd2e48c">What is a graph ?</h3>
+<section id="slide-orgd90b134">
+<h3 id="orgd90b134">What is a graph ?</h3>
 
-<div id="orga6a2100" class="figure">
+<div id="orgc6f2fdf" class="figure">
 <p><a href="images/simple_graph.jpg"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/simple_graph.jpg" alt="simple_graph.jpg" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-orgc29d0bf">
-<h3 id="orgc29d0bf">A cyclic graph ?</h3>
+<section id="slide-org03f2540">
+<h3 id="org03f2540">A cyclic graph ?</h3>
 
-<div id="orgb783713" class="figure">
+<div id="org0306327" class="figure">
 <p><a href="images/cyclic_graph.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/cyclic_graph.gif" alt="cyclic_graph.gif" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org49660a5">
-<h3 id="org49660a5">A directed graph ?</h3>
+<section id="slide-orgefdd0f0">
+<h3 id="orgefdd0f0">A directed graph ?</h3>
 
-<div id="orgd3d4656" class="figure">
+<div id="org273da09" class="figure">
 <p><a href="images/directed_graph.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/directed_graph.png" alt="directed_graph.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org294ac31">
-<h3 id="org294ac31">And a DAG ?</h3>
+<section id="slide-org461fea3">
+<h3 id="org461fea3">And a DAG ?</h3>
 
-<div id="orgf5df110" class="figure">
+<div id="org55c6a92" class="figure">
 <p><a href="images/dag.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/dag.png" alt="dag.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-orgebec7a4">
-<h3 id="orgebec7a4">This is also a DAG</h3>
+<section id="slide-org2d0390a">
+<h3 id="org2d0390a">This is also a DAG</h3>
 
-<div id="org4ef4260" class="figure">
+<div id="orgc4925ac" class="figure">
 <p><a href="images/dag2.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/dag2.png" alt="dag2.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org1ce335b">
-<h3 id="org1ce335b"></h3>
+<section id="slide-org48749ef">
+<h3 id="org48749ef"></h3>
 
-<div id="orgb153011" class="figure">
+<div id="org627785f" class="figure">
 <p><a href="images/merkle_merkle_dag.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/merkle_merkle_dag.png" alt="merkle_merkle_dag.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org8869c8e">
-<h3 id="org8869c8e">A real Merkle Tree</h3>
+<section id="slide-org4497d5b">
+<h3 id="org4497d5b">A real Merkle Tree</h3>
 
-<div id="org9328d09" class="figure">
+<div id="org05b92b3" class="figure">
 <p><a href="images/Hash_Tree.svg"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/Hash_Tree.svg" alt="Hash_Tree.svg" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org9c3ef78">
-<h3 id="org9c3ef78">Gateway</h3>
+<section id="slide-org9b07846">
+<h3 id="org9b07846">Gateway</h3>
 <p>
 A Gateway is a computer acting as a HTTP server and a local IPFS node at the same time.
 A client without a local ipfs node can send a request to the gateway, which will get the file from the swarm,
@@ -441,23 +452,23 @@ and then send it back to the client.
 </div>
 
 </section>
-<section id="slide-org52a10d3">
-<h3 id="org52a10d3"></h3>
+<section id="slide-org5f028ab">
+<h3 id="org5f028ab"></h3>
 
-<div id="org4d8c87a" class="figure">
+<div id="org24c2e05" class="figure">
 <p><a href="images/gateways_diagrams.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/gateways_diagrams.png" alt="gateways_diagrams.png" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org1830686">
-<h3 id="org1830686"></h3>
+<section id="slide-org5273aae">
+<h3 id="org5273aae"></h3>
 <p>
 <a href="https://ipfs.github.io/public-gateway-checker/">Public Gateway Checker</a>
 </p>
 
 
-<div id="orgf0bc38d" class="figure">
+<div id="org4f30982" class="figure">
 <p><a href="images/gateways_public_checker.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/gateways_public_checker.png" alt="gateways_public_checker.png" /></a>
 </p>
 </div>
@@ -465,34 +476,34 @@ and then send it back to the client.
 </section>
 </section>
 <section>
-<section id="slide-orgddac60a">
-<h2 id="orgddac60a">IV - Basic Commands</h2>
+<section id="slide-org5f7f0cb">
+<h2 id="org5f7f0cb">IV - Basic Commands</h2>
 
 
 </section>
 </section>
 <section>
-<section id="slide-org16e7e4e">
-<h2 id="org16e7e4e">A. Installation</h2>
-<div class="outline-text-2" id="text-org16e7e4e">
+<section id="slide-org5689833">
+<h2 id="org5689833">A. Installation</h2>
+<div class="outline-text-2" id="text-org5689833">
 </div>
 </section>
-<section id="slide-org83cd6b1">
-<h3 id="org83cd6b1">Links</h3>
+<section id="slide-org713f020">
+<h3 id="org713f020">Links</h3>
 <p>
 <a href="https://github.com/ipfs/go-ipfs#install">https://github.com/ipfs/go-ipfs#install</a>
 <a href="https://github.com/ipfs/ipfs-desktop/releases">https://github.com/ipfs/ipfs-desktop/releases</a>
 </p>
 
 </section>
-<section id="slide-org5655990">
-<h3 id="org5655990"></h3>
+<section id="slide-orge5c1c64">
+<h3 id="orge5c1c64"></h3>
 <p>
 <a href="https://asciinema.org/a/FkZu5Rs4PtuOz1BURw9PP1Sn5">asciinema</a>
 </p>
 
 
-<div id="org8a4666e" class="figure">
+<div id="orgd74674f" class="figure">
 <p><a href="images/ipfs_install_pacman.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_install_pacman.gif" alt="ipfs_install_pacman.gif" /></a>
 </p>
 </div>
@@ -500,13 +511,13 @@ and then send it back to the client.
 </section>
 </section>
 <section>
-<section id="slide-org3d1fcc5">
-<h2 id="org3d1fcc5">B. ifps init</h2>
-<div class="outline-text-2" id="text-org3d1fcc5">
+<section id="slide-orgebed0f4">
+<h2 id="orgebed0f4">B. ifps init</h2>
+<div class="outline-text-2" id="text-orgebed0f4">
 </div>
 </section>
-<section id="slide-org3014e7c">
-<h3 id="org3014e7c"></h3>
+<section id="slide-orgb1b8d46">
+<h3 id="orgb1b8d46"></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell" ><code trim>ipfs init
@@ -514,27 +525,27 @@ and then send it back to the client.
 </div>
 
 </section>
-<section id="slide-org78706a0">
-<h3 id="org78706a0"></h3>
+<section id="slide-org2ddf610">
+<h3 id="org2ddf610"></h3>
 <p>
 <a href="https://asciinema.org/a/Y8zMADDEL66tX6e3McuFxCVoz">asciinema</a>
 </p>
 
 
-<div id="orgcb7d4f2" class="figure">
+<div id="orgd02690e" class="figure">
 <p><a href="images/ipfs_init.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_init.gif" alt="ipfs_init.gif" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org41393b6">
-<h3 id="org41393b6"></h3>
+<section id="slide-org8ed92dc">
+<h3 id="org8ed92dc"></h3>
 <p>
 <a href="https://asciinema.org/a/96t2sDJwIfFIbjskPcdS8KgUN">asciinema</a>
 </p>
 
 
-<div id="org0521f8a" class="figure">
+<div id="org5b4d6b4" class="figure">
 <p><a href="images/ipfs_quickstart.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_quickstart.gif" alt="ipfs_quickstart.gif" /></a>
 </p>
 </div>
@@ -544,13 +555,13 @@ and then send it back to the client.
 </section>
 </section>
 <section>
-<section id="slide-org5c65134">
-<h2 id="org5c65134">C. ipfs add</h2>
-<div class="outline-text-2" id="text-org5c65134">
+<section id="slide-orgc11bf94">
+<h2 id="orgc11bf94">C. ipfs add</h2>
+<div class="outline-text-2" id="text-orgc11bf94">
 </div>
 </section>
-<section id="slide-orgf82711a">
-<h3 id="orgf82711a"></h3>
+<section id="slide-orgedc0b31">
+<h3 id="orgedc0b31"></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell" ><code trim>ipfs add file
@@ -559,14 +570,14 @@ ipfs add -r directory
 </div>
 
 </section>
-<section id="slide-org05897ce">
-<h3 id="org05897ce"></h3>
+<section id="slide-orgbd54214">
+<h3 id="orgbd54214"></h3>
 <p>
 <a href="https://asciinema.org/a/Nw1rDd3EyNJdOueqXGFGAwVz0">asciinema</a>
 </p>
 
 
-<div id="orge54ab20" class="figure">
+<div id="org82d30aa" class="figure">
 <p><a href="images/ipfs_add.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_add.gif" alt="ipfs_add.gif" /></a>
 </p>
 </div>
@@ -574,13 +585,13 @@ ipfs add -r directory
 </section>
 </section>
 <section>
-<section id="slide-org24c1499">
-<h2 id="org24c1499">ipfs ls</h2>
-<div class="outline-text-2" id="text-org24c1499">
+<section id="slide-org56bb2ac">
+<h2 id="org56bb2ac">ipfs ls</h2>
+<div class="outline-text-2" id="text-org56bb2ac">
 </div>
 </section>
-<section id="slide-org4dc0d4d">
-<h3 id="org4dc0d4d"></h3>
+<section id="slide-orgc0bbe38">
+<h3 id="orgc0bbe38"></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell" ><code trim>ipfs ls directory_hash
@@ -588,14 +599,14 @@ ipfs add -r directory
 </div>
 
 </section>
-<section id="slide-orgc08de9a">
-<h3 id="orgc08de9a"></h3>
+<section id="slide-orgee94541">
+<h3 id="orgee94541"></h3>
 <p>
 <a href="https://asciinema.org/a/a7G3YMmqIAx3qgPf23alrnSIR">asciinema</a>
 </p>
 
 
-<div id="org2ff106f" class="figure">
+<div id="orgfb18629" class="figure">
 <p><a href="images/ipfs_ls.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_ls.gif" alt="ipfs_ls.gif" /></a>
 </p>
 </div>
@@ -603,26 +614,26 @@ ipfs add -r directory
 </section>
 </section>
 <section>
-<section id="slide-org2267109">
-<h2 id="org2267109">ipfs cat</h2>
-<div class="outline-text-2" id="text-org2267109">
+<section id="slide-org40734b0">
+<h2 id="org40734b0">ipfs cat</h2>
+<div class="outline-text-2" id="text-org40734b0">
 </div>
 </section>
-<section id="slide-org1231024">
-<h3 id="org1231024"></h3>
+<section id="slide-org1e0c7f6">
+<h3 id="org1e0c7f6"></h3>
 <pre  class="example">
 ipfs cat hash
 </pre>
 
 </section>
-<section id="slide-org28dc710">
-<h3 id="org28dc710"></h3>
+<section id="slide-org167be16">
+<h3 id="org167be16"></h3>
 <p>
 <a href="https://asciinema.org/a/BrgWdcmlVfWb7vYqK0gKlSfcO">asciinema</a>
 </p>
 
 
-<div id="org1899391" class="figure">
+<div id="org24b1d0a" class="figure">
 <p><a href="images/ipfs_cat.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_cat.gif" alt="ipfs_cat.gif" /></a>
 </p>
 </div>
@@ -630,13 +641,13 @@ ipfs cat hash
 </section>
 </section>
 <section>
-<section id="slide-orga9a076e">
-<h2 id="orga9a076e">ipfs daemon</h2>
-<div class="outline-text-2" id="text-orga9a076e">
+<section id="slide-org02e40c6">
+<h2 id="org02e40c6">ipfs daemon</h2>
+<div class="outline-text-2" id="text-org02e40c6">
 </div>
 </section>
-<section id="slide-org9f1fb76">
-<h3 id="org9f1fb76"></h3>
+<section id="slide-orgf052998">
+<h3 id="orgf052998"></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell" ><code trim>ipfs daemon
@@ -644,14 +655,14 @@ ipfs cat hash
 </div>
 
 </section>
-<section id="slide-org1ea6ae8">
-<h3 id="org1ea6ae8"></h3>
+<section id="slide-org9c393c6">
+<h3 id="org9c393c6"></h3>
 <p>
 <a href="https://asciinema.org/a/T2XZdDQ9QFuyiFSl0W42vYkYD">asciinema</a>
 </p>
 
 
-<div id="org332b119" class="figure">
+<div id="orgc2630db" class="figure">
 <p><a href="images/ipfs_daemon.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_daemon.gif" alt="ipfs_daemon.gif" /></a>
 </p>
 </div>
@@ -659,13 +670,13 @@ ipfs cat hash
 </section>
 </section>
 <section>
-<section id="slide-org0528851">
-<h2 id="org0528851">ipfs id</h2>
-<div class="outline-text-2" id="text-org0528851">
+<section id="slide-orgec33c01">
+<h2 id="orgec33c01">ipfs id</h2>
+<div class="outline-text-2" id="text-orgec33c01">
 </div>
 </section>
-<section id="slide-org874cdb8">
-<h3 id="org874cdb8"></h3>
+<section id="slide-org0de54b7">
+<h3 id="org0de54b7"></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell" ><code trim>ipfs id
@@ -673,14 +684,14 @@ ipfs cat hash
 </div>
 
 </section>
-<section id="slide-org83ab565">
-<h3 id="org83ab565"></h3>
+<section id="slide-org88b25ae">
+<h3 id="org88b25ae"></h3>
 <p>
 <a href="https://asciinema.org/a/U9oDvgBYrmglstecsFurS3XS1">asciinema</a>
 </p>
 
 
-<div id="org2ed3cf5" class="figure">
+<div id="org2a1e2f7" class="figure">
 <p><a href="images/ipfs_id.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_id.gif" alt="ipfs_id.gif" /></a>
 </p>
 </div>
@@ -688,13 +699,13 @@ ipfs cat hash
 </section>
 </section>
 <section>
-<section id="slide-org780c28e">
-<h2 id="org780c28e">ipfs swarm</h2>
-<div class="outline-text-2" id="text-org780c28e">
+<section id="slide-org338a24e">
+<h2 id="org338a24e">ipfs swarm</h2>
+<div class="outline-text-2" id="text-org338a24e">
 </div>
 </section>
-<section id="slide-orgddfa789">
-<h3 id="orgddfa789"></h3>
+<section id="slide-org139de13">
+<h3 id="org139de13"></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell" ><code trim>ipfs swarm peers
@@ -702,21 +713,21 @@ ipfs cat hash
 </div>
 
 </section>
-<section id="slide-orgd40194f">
-<h3 id="orgd40194f"></h3>
+<section id="slide-org263ed51">
+<h3 id="org263ed51"></h3>
 <p>
 <a href="https://asciinema.org/a/AGW6PPHJRKVbbzzRglHKjGANe">asciinema</a>
 </p>
 
 
-<div id="orge7dbf21" class="figure">
+<div id="orgee1c1c9" class="figure">
 <p><a href="images/ipfs_swarm.gif"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_swarm.gif" alt="ipfs_swarm.gif" /></a>
 </p>
 </div>
 
 </section>
-<section id="slide-org5cfefc5">
-<h3 id="org5cfefc5"></h3>
+<section id="slide-org2c516d0">
+<h3 id="org2c516d0"></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell" ><code trim>ipfs id hash_of_a_peer
@@ -724,21 +735,21 @@ ipfs cat hash
 </div>
 
 </section>
-<section id="slide-orgad48731">
-<h3 id="orgad48731"></h3>
+<section id="slide-org4873675">
+<h3 id="org4873675"></h3>
 
 
 
 </section>
 </section>
 <section>
-<section id="slide-orgb6dc047">
-<h2 id="orgb6dc047">D. ipfs get</h2>
-<div class="outline-text-2" id="text-orgb6dc047">
+<section id="slide-org530cb99">
+<h2 id="org530cb99">D. ipfs get</h2>
+<div class="outline-text-2" id="text-org530cb99">
 </div>
 </section>
-<section id="slide-orgd376632">
-<h3 id="orgd376632">test cargo</h3>
+<section id="slide-org2196013">
+<h3 id="org2196013">test cargo</h3>
 <p>
 hello cargo
 </p>
@@ -746,30 +757,30 @@ hello cargo
 </section>
 </section>
 <section>
-<section id="slide-org1140090">
-<h2 id="org1140090">E. ipfs pin</h2>
+<section id="slide-orgbcb8771">
+<h2 id="orgbcb8771">E. ipfs pin</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-orgf12da16">
-<h2 id="orgf12da16">V - Advanced Concepts</h2>
-<div class="outline-text-2" id="text-orgf12da16">
+<section id="slide-org27794aa">
+<h2 id="org27794aa">V - Advanced Concepts</h2>
+<div class="outline-text-2" id="text-org27794aa">
 </div>
 </section>
-<section id="slide-org409396c">
-<h3 id="org409396c"><a href="https://multiformats.io/">https://multiformats.io/</a></h3>
+<section id="slide-org3df3611">
+<h3 id="org3df3611"><a href="https://multiformats.io/">https://multiformats.io/</a></h3>
 
 </section>
 </section>
 <section>
-<section id="slide-orgda48797">
-<h2 id="orgda48797">VI - Practice makes perfect</h2>
-<div class="outline-text-2" id="text-orgda48797">
+<section id="slide-org31a1d29">
+<h2 id="org31a1d29">VI - Practice makes perfect</h2>
+<div class="outline-text-2" id="text-org31a1d29">
 </div>
 </section>
-<section id="slide-orgd71931d">
-<h3 id="orgd71931d">Browser upgrade path</h3>
+<section id="slide-org37c8fcc">
+<h3 id="org37c8fcc">Browser upgrade path</h3>
 <ul>
 <li class="on"><code>[X]</code> go-ipfs</li>
 <li class="on"><code>[X]</code> http-to-ipfs gateway</li>
@@ -781,15 +792,15 @@ hello cargo
 </ul>
 
 </section>
-<section id="slide-org8e85980">
-<h3 id="org8e85980">Variables and mutability</h3>
+<section id="slide-org254ac61">
+<h3 id="org254ac61">Variables and mutability</h3>
 <div class="org-src-container">
 
-<pre  class="src src-rust" ><code trim><span style="color: #FC5FA3; font-weight: bold;">fn</span> <span style="color: #41A1C0;">main</span>() {
-    <span style="color: #FC5FA3; font-weight: bold;">let</span> <span style="color: #FC5FA3; font-weight: bold;">mut</span> <span style="color: #41A1C0;">x</span> = 5;
-    <span style="color: #9EF1DD;">println!</span>(<span style="color: #FC6A5D;">"The value of x is: </span><span style="color: #FC6A5D; font-style: italic;">{}</span><span style="color: #FC6A5D;">"</span>, x);
+<pre  class="src src-rust" ><code trim><span style="color: #00638a; font-weight: bold;">fn</span> <span style="color: #454545;">main</span>() {
+    <span style="color: #00638a; font-weight: bold;">let</span> <span style="color: #00638a; font-weight: bold;">mut</span> <span style="color: #454545;">x</span> = 5;
+    <span style="color: #7d57c2;">println!</span>(<span style="color: #678f03;">"The value of x is: </span><span style="color: #678f03; font-style: italic;">{}</span><span style="color: #678f03;">"</span>, x);
     x = 6;
-    <span style="color: #9EF1DD;">println!</span>(<span style="color: #FC6A5D;">"The value of x is: </span><span style="color: #FC6A5D; font-style: italic;">{}</span><span style="color: #FC6A5D;">"</span>, x);
+    <span style="color: #7d57c2;">println!</span>(<span style="color: #678f03;">"The value of x is: </span><span style="color: #678f03; font-style: italic;">{}</span><span style="color: #678f03;">"</span>, x);
 }
 </code></pre>
 </div>
@@ -797,11 +808,11 @@ hello cargo
 </section>
 </section>
 <section>
-<section id="slide-orgde4616f">
-<h2 id="orgde4616f">VII - IPFS: le futur ?</h2>
+<section id="slide-org129b79e">
+<h2 id="org129b79e">VII - IPFS: le futur ?</h2>
 </section>
-<section id="slide-org990cec4">
-<h3 id="org990cec4">Wikipedia</h3>
+<section id="slide-org0da66cb">
+<h3 id="org0da66cb">Wikipedia</h3>
 <ul>
 <li><a href="https://en.wikipedia-on-ipfs.org/wiki/">wikipedia on ipfs</a></li>
 <li><a href="https://blog.ipfs.io/2021-05-31-distributed-wikipedia-mirror-update/">blog post explanation</a></li>
@@ -810,23 +821,23 @@ hello cargo
 </ul>
 
 </section>
-<section id="slide-org3669fb9">
-<h3 id="org3669fb9">Remix</h3>
+<section id="slide-org4d3287e">
+<h3 id="org4d3287e">Remix</h3>
 <p>
 mettre image remix deploy to ipfs
 </p>
 
 </section>
-<section id="slide-org61a39d6">
-<h3 id="org61a39d6">Fleek</h3>
+<section id="slide-orgadfc9ad">
+<h3 id="orgadfc9ad">Fleek</h3>
 
 </section>
-<section id="slide-orgfd187cd">
-<h3 id="orgfd187cd">Les dapps decentralisées avec données statiques lourdes</h3>
+<section id="slide-orgf37a510">
+<h3 id="orgf37a510">Les dapps decentralisées avec données statiques lourdes</h3>
 
 </section>
-<section id="slide-org0b92004">
-<h3 id="org0b92004">NFT storage</h3>
+<section id="slide-org6747873">
+<h3 id="org6747873">NFT storage</h3>
 <ul>
 <li><a href="https://nft.storage/">https://nft.storage/</a></li>
 <li><a href="https://nftschool.dev/">https://nftschool.dev/</a> (<a href="https://github.com/protocol/nft-website">gh</a>)</li>
@@ -835,8 +846,8 @@ mettre image remix deploy to ipfs
 
 
 </section>
-<section id="slide-org8dde45a">
-<h3 id="org8dde45a">Search</h3>
+<section id="slide-orgd9773e5">
+<h3 id="orgd9773e5">Search</h3>
 <ul>
 <li><a href="https://ipfs-search.com/#/search">https://ipfs-search.com/#/search</a></li>
 <li><a href="https://thegraph.com/">TheGraph</a></li>
@@ -844,8 +855,8 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-org0a54800">
-<h3 id="org0a54800">Database</h3>
+<section id="slide-org0162eed">
+<h3 id="org0162eed">Database</h3>
 <ul>
 <li><a href="https://orbitdb.org/">https://orbitdb.org/</a> (<a href="https://github.com/orbitdb/orbit-db">gh</a>)</li>
 <li><a href="https://textile.io/">https://textile.io/</a> (<a href="https://github.com/textileio">gh</a>)</li>
@@ -854,8 +865,8 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-org5c5091e">
-<h3 id="org5c5091e">chat</h3>
+<section id="slide-org28c1282">
+<h3 id="org28c1282">chat</h3>
 <ul>
 <li><a href="https://orbit.chat/">https://orbit.chat/</a></li>
 <li><a href="https://berty.tech/">https://berty.tech/</a></li>
@@ -863,8 +874,8 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-org2114e77">
-<h3 id="org2114e77">Files</h3>
+<section id="slide-orgc2d52fc">
+<h3 id="orgc2d52fc">Files</h3>
 <ul>
 <li><a href="https://brig.readthedocs.io/en/latest/">Brig</a></li>
 <li><a href="https://enzypt.io/zPuhMAQ2f89C4an6M2Ydbvw3wOpKYCvn/7QiVWJoK5a-ZSYXYJKYl_YuMQZQNe7-oibdZg1c5qDw">Buy and sell your files</a></li>
@@ -872,16 +883,16 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-orgb118941">
-<h3 id="orgb118941">FPS</h3>
+<section id="slide-orga554401">
+<h3 id="orga554401">FPS</h3>
 <ul>
 <li><a href="https://ipfs-fps.com/">https://ipfs-fps.com/</a></li>
 
 </ul>
 
 </section>
-<section id="slide-org366244a">
-<h3 id="org366244a">Further improvement</h3>
+<section id="slide-org2a59dca">
+<h3 id="org2a59dca">Further improvement</h3>
 <ul>
 <li><a href="https://wiki.openzim.org/wiki/OpenZIM">Web-based Zim reader</a></li>
 <li><a href="https://akasha.world/">Akasha</a></li>
@@ -889,10 +900,10 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-orga4d52a9">
-<h3 id="orga4d52a9">And many more</h3>
+<section id="slide-orgc92f257">
+<h3 id="orgc92f257">And many more</h3>
 
-<div id="org09d0106" class="figure">
+<div id="org35fb15f" class="figure">
 <p><a href="images/ipfs-applications-diagram.png"><img src="file:///media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs-applications-diagram.png" alt="ipfs-applications-diagram.png" /></a>
 </p>
 </div>
@@ -900,13 +911,13 @@ mettre image remix deploy to ipfs
 </section>
 </section>
 <section>
-<section id="slide-orgf4d20dd">
-<h2 id="orgf4d20dd">VIII - Links, resources &amp; Programs / Services used</h2>
-<div class="outline-text-2" id="text-orgf4d20dd">
+<section id="slide-org4646862">
+<h2 id="org4646862">VIII - Links, resources &amp; Programs / Services used</h2>
+<div class="outline-text-2" id="text-org4646862">
 </div>
 </section>
-<section id="slide-org4389fe0">
-<h3 id="org4389fe0">Links IPFS</h3>
+<section id="slide-org21b8ee4">
+<h3 id="org21b8ee4">Links IPFS</h3>
 <ul>
 <li><a href="https://ipfs.io/">IPFS</a></li>
 <li><a href="https://blog.ipfs.io/">Blog</a></li>
@@ -922,8 +933,8 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-org77968ba">
-<h3 id="org77968ba">Links bittorrent</h3>
+<section id="slide-org588e4a4">
+<h3 id="org588e4a4">Links bittorrent</h3>
 <ul>
 <li><a href="http://www-igm.univ-mlv.fr/%7Edr/XPOSE2004/bitorrent/index.html">bittorrent univ mlv</a></li>
 <li><a href="https://www.bittorrent.org/beps/bep_0000.html">Index of beps</a></li>
@@ -935,8 +946,8 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-orgc277888">
-<h3 id="orgc277888">Links DHT</h3>
+<section id="slide-org41620fb">
+<h3 id="org41620fb">Links DHT</h3>
 <ul>
 <li><a href="https://zestedesavoir.com/billets/3310/p2p-internals-3/">Zeste de savoir : p2p internals 3</a></li>
 <li><a href="https://www.youtube.com/watch?v=WeXRfWJ2snA">Wandida DHT Pastry Anne-Marie de Kermarrec</a></li>
@@ -951,8 +962,18 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-org65334ab">
-<h3 id="org65334ab">Links Uncategorized</h3>
+<section id="slide-org1b6267f">
+<h3 id="org1b6267f">Links CRDT</h3>
+<ul>
+<li><a href="https://crdt.tech/">crdt.tech</a></li>
+<li><a href="https://archive.org/details/Microsoft_Research_Video_153540">Marc Shapiro Microsoft Research (archive.org)</a></li>
+<li><a href="https://github.com/alangibson/awesome-crdt">Awesome-crdt</a></li>
+
+</ul>
+
+</section>
+<section id="slide-org11b75eb">
+<h3 id="org11b75eb">Links Uncategorized</h3>
 <ul>
 <li><a href="https://libp2p.io/">libp2p</a></li>
 <li><a href="https://noiseprotocol.org/noise.html">security on libp2p with noise protocol framework</a></li>
@@ -970,8 +991,8 @@ mettre image remix deploy to ipfs
 
 
 </section>
-<section id="slide-org1755b9f">
-<h3 id="org1755b9f">Programs / Services used</h3>
+<section id="slide-org68a3a1d">
+<h3 id="org68a3a1d">Programs / Services used</h3>
 <ul>
 <li>Emacs</li>
 <li>Orgmode</li>
@@ -984,8 +1005,8 @@ mettre image remix deploy to ipfs
 </ul>
 
 </section>
-<section id="slide-org8f2160c">
-<h4 id="org8f2160c">Questions ?</h4>
+<section id="slide-org05d1191">
+<h4 id="org05d1191">Questions ?</h4>
 </section>
 </section>
 </div>
