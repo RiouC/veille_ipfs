@@ -1,0 +1,530 @@
+#+author:
+#+options: toc:nil num:nil
+#+options: date:nil timestamp:nil
+#+title: IPFS
+#+REVEAL_THEME: black
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/asciinema-player.css" />
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/slides.css" />
+# #+HTML_HEAD: <style type="text/css"> img {width: 100%} img[alt=bitcoin] {width: 50%}</style>
+
+
+* Sommaire 
+
+**** I - Introduction
+**** II - What is wrong with the Internet ?
+**** III - Basic Concepts
+**** IV - Basic Commands
+**** V - Advanced Concepts
+**** VI - Practice makes perfect
+**** VII - IPFS: le futur ?
+**** VIII - Links, resources & Programs / Services used
+
+* I - Introduction
+
+** Definition
+
+IPFS = InterPlanetary File System
+
+** Protocol Labs
+
+https://protocol.ai/
+
+By Juan Benet in May 2014
+
+[[file:images/Juan_Benet_headshot_small.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/Juan_Benet_headshot_small.png]]
+
+** Some of their creations
+
+- IPFS
+- FileCoin
+- CoinList
+- libp2p
+
+[[https://blog.ycombinator.com/ipfs-coinlist-and-the-filecoin-ico-with-juan-benet-and-dalton-caldwell/][YCombinator interview (with transcript)]]
+
+** Trivia
+
+- In 2018, Benet was named one of Fortune magazine's "40 under 40" in recognition of his work creating IPFS.
+- J.Benet is a patron on patreon of the youtube channel Veritasium
+
+  [[file:images/jbenet_patreon_veritasium.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/jbenet_patreon_veritasium.png]]
+
+* II - What's wrong with the Internet ?
+
+** History
+
+*** First computers
+
+Prog + Data -> Data
+
+*** Combining programs / timesharing
+
+- Multics
+- Unix
+- ...
+
+A sane way of sharing program and data
+
+*** Mainframe / Terminals
+
+*** More mainframes, but linked
+
+Beginning of networking
+
+*** PCs (personal computers)
+
+*** Internet
+
+Internet is the solution to link all the PCs together, like we did before with the mainframes.
+
+*** The Web
+
+Data transmission between computers is becoming widely available.
+
+*** Web2.0
+
+Programs are also transmitted with data from the server to the client.
+But now, the client is subservient to the server.
+
+*** Certify data
+
+- Beginning of internet encryption
+- Certificate authorities
+- Blockchains
+
+*** Patterns repeat
+
+*** Decentralized web
+
+What if these links that refer to data were secured as well ?
+
+** IPFS
+
+*** Separation of the Internets
+
+*** A declaration of the independance of cyberspace
+
+- [[https://www.eff.org/cyberspace-independence][eff]]
+- [[https://en.wikipedia.org/wiki/A_Declaration_of_the_Independence_of_Cyberspace][wikipedia]]
+
+*** Issues tackled
+
+- emerging networks
+- links break
+- huge inefficiencies
+- bad security model
+- no offline use
+
+* III - Basic Concepts
+
+** What is it ?
+
+[[file:images/ipfs_stack.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_stack.png]]
+
+
+** How it works
+
+#+ATTR_HTML: :alt medium-high
+[[file:images/ipfs_overview.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_overview.png]]
+
+** Location-based vs Content-based
+
+URL vs CID
+
+URL = Uniform Resource Locator
+[[file:images/location_based.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/location_based.png]]
+
+CID = Content Identifier
+[[file:images/content_based.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/content_based.png]]
+
+** LifeCycle
+
+[[file:images/lifecycle.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/lifecycle.png]]
+
+** Chunks
+
+[[file:images/chunking.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunking.png]]
+
+** 
+
+[[file:images/chunk_deduplication_1.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_deduplication_1.png]]
+
+** 
+
+We only have to store these chunks once.
+
+[[file:images/chunk_deduplication_2.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_deduplication_2.png]]
+
+** 
+
+#+begin_notes
+We can download a file piecewise, checking each piece as we get it.
+We don't have to download the entire file first.
+#+end_notes
+
+[[file:images/chunk_piecewise_transfer.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_piecewise_transfer.png]]
+
+** 
+
+#+begin_notes
+ We can skip directly to the piece we care about.
+ We can even chunk a file such that the chunks align with logical boundaries (e.g., video key frames).
+#+end_notes
+
+[[file:images/chunk_seeking.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_seeking.png]]
+
+** 
+
+[[file:images/unixfs_merkle_tree.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/unixfs_merkle_tree.png]]
+
+** Merkle {Tree, DAG, *}
+
+DAG = directed acyclic graph
+
+** What is a Tree ?
+
+[[file:images/arbre_1.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/arbre.png]]
+
+** What is a graph ?
+
+[[file:images/simple_graph.jpg][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/simple_graph.jpg]]
+
+** A cyclic graph ?
+
+[[file:images/cyclic_graph.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/cyclic_graph.gif]]
+
+** A directed graph ?
+
+[[file:images/directed_graph.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/directed_graph.png]]
+
+** And a DAG ?
+
+[[file:images/dag.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/dag.png]]
+
+** This is also a DAG
+
+[[file:images/dag2.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/dag2.png]]
+
+** 
+
+[[file:images/merkle_merkle_dag.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/merkle_merkle_dag.png]]
+
+** A real Merkle Tree
+
+[[file:images/Hash_Tree.svg][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/Hash_Tree.svg]]
+
+** Gateway
+
+A Gateway is a computer acting as a HTTP server and a local IPFS node at the same time.
+A client without a local ipfs node can send a request to the gateway, which will get the file from the swarm,
+and then send it back to the client.
+
+#+begin_src shell
+https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
+#+end_src
+
+** 
+
+[[file:images/gateways_diagrams.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/gateways_diagrams.png]]
+
+** 
+
+[[https://ipfs.github.io/public-gateway-checker/][Public Gateway Checker]]
+
+[[file:images/gateways_public_checker.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/gateways_public_checker.png]]
+
+* IV - Basic Commands
+
+
+* A. Installation
+
+** Links
+
+https://github.com/ipfs/go-ipfs#install
+https://github.com/ipfs/ipfs-desktop/releases
+
+** 
+
+[[https://asciinema.org/a/FkZu5Rs4PtuOz1BURw9PP1Sn5][asciinema]]
+
+[[file:images/ipfs_install_pacman.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_install_pacman.gif]]
+
+* B. ifps init
+
+** 
+
+#+begin_src shell
+ipfs init
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/Y8zMADDEL66tX6e3McuFxCVoz][asciinema]]
+
+[[file:images/ipfs_init.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_init.gif]]
+
+** 
+
+[[https://asciinema.org/a/96t2sDJwIfFIbjskPcdS8KgUN][asciinema]]
+
+[[file:images/ipfs_quickstart.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_quickstart.gif]]
+
+
+
+* C. ipfs add
+
+** 
+
+#+begin_src shell
+  ipfs add file
+  ipfs add -r directory
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/Nw1rDd3EyNJdOueqXGFGAwVz0][asciinema]]
+
+[[file:images/ipfs_add.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_add.gif]]
+
+* ipfs ls
+
+** 
+
+#+begin_src shell
+ipfs ls directory_hash
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/a7G3YMmqIAx3qgPf23alrnSIR][asciinema]]
+
+[[file:images/ipfs_ls.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_ls.gif]]
+
+* ipfs cat
+
+** 
+
+#+begin_src 
+ipfs cat hash
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/BrgWdcmlVfWb7vYqK0gKlSfcO][asciinema]]
+
+[[file:images/ipfs_cat.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_cat.gif]]
+
+* ipfs daemon
+
+** 
+
+#+begin_src shell
+ipfs daemon
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/T2XZdDQ9QFuyiFSl0W42vYkYD][asciinema]]
+
+[[file:images/ipfs_daemon.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_daemon.gif]]
+
+* ipfs id
+
+** 
+
+#+begin_src shell
+ipfs id
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/U9oDvgBYrmglstecsFurS3XS1][asciinema]]
+
+[[file:images/ipfs_id.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_id.gif]]
+
+* ipfs swarm
+
+** 
+
+#+begin_src shell
+ipfs swarm peers
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/AGW6PPHJRKVbbzzRglHKjGANe][asciinema]]
+
+[[file:images/ipfs_swarm.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_swarm.gif]]
+
+** 
+
+#+begin_src shell
+ipfs id hash_of_a_peer
+#+end_src
+
+** 
+
+
+
+* D. ipfs get
+
+** test cargo
+hello cargo
+
+* E. ipfs pin
+
+* V - Advanced Concepts
+
+** https://multiformats.io/
+
+* VI - Practice makes perfect
+
+** Browser upgrade path
+
+- [X] go-ipfs
+- [X] http-to-ipfs gateway
+- [X] go-ipfs / webui / desktop
+- [X] js-api / js-ipfs
+- [X] browser extensions
+- [-] native in browsers
+
+** Variables and mutability
+
+#+begin_src rust
+fn main() {
+    let mut x = 5;
+    println!("The value of x is: {}", x);
+    x = 6;
+    println!("The value of x is: {}", x);
+}
+#+end_src
+
+* VII - IPFS: le futur ?
+
+#+begin_comment
+Non, c'est le présent !
+#+end_comment
+
+** Wikipedia
+
+- [[https://en.wikipedia-on-ipfs.org/wiki/][wikipedia on ipfs]]
+- [[https://blog.ipfs.io/2021-05-31-distributed-wikipedia-mirror-update/][blog post explanation]]
+- [[https://github.com/ipfs/distributed-wikipedia-mirror][github]]
+  
+** Remix
+
+mettre image remix deploy to ipfs
+
+** Fleek
+
+** Les dapps decentralisées avec données statiques lourdes
+
+** NFT storage
+
+- https://nft.storage/
+- https://nftschool.dev/ ([[https://github.com/protocol/nft-website][gh]])
+
+
+** Search
+
+- https://ipfs-search.com/#/search
+- [[https://thegraph.com/][TheGraph]]
+
+** Database
+
+- https://orbitdb.org/ ([[https://github.com/orbitdb/orbit-db][gh]])
+- https://textile.io/ ([[https://github.com/textileio][gh]])
+- [[https://ipfs.io/ipfs/QmVWQMLUM3o4ZFbLtLMS1PMLfodeEeBkBPR2a2R3hqQ337/#/][TodoMVC]]
+
+** chat
+
+- https://orbit.chat/
+- https://berty.tech/
+
+** Files
+
+- [[https://brig.readthedocs.io/en/latest/][Brig]]
+- [[https://enzypt.io/zPuhMAQ2f89C4an6M2Ydbvw3wOpKYCvn/7QiVWJoK5a-ZSYXYJKYl_YuMQZQNe7-oibdZg1c5qDw][Buy and sell your files]]
+  
+** FPS
+
+- https://ipfs-fps.com/
+
+** Further improvement
+
+- [[https://wiki.openzim.org/wiki/OpenZIM][Web-based Zim reader]]
+- [[https://akasha.world/][Akasha]]
+  
+** And many more
+
+[[file:images/ipfs-applications-diagram.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs-applications-diagram.png]]
+
+* VIII - Links, resources & Programs / Services used
+
+** Links IPFS
+
+- [[https://ipfs.io/][IPFS]]
+- [[https://blog.ipfs.io/][Blog]]
+- [[https://discuss.ipfs.io/][Forum]]
+- [[https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew][YouTube]]
+- [[https://github.com/protocol][Protocol Labs · GitHub]]
+- [[https://blogchaincafe.com/ipfs-et-la-decentralisation-du-web][Blockchaincafe]]
+- [[https://www.youtube.com/watch?v=HUVmypx9HGI][Stanford Seminar - YouTube]]
+- [[https://www.youtube.com/watch?v=5Uj6uR3fp-U][Simply Explained - YouTube]]
+- [[https://github.com/ipfs/awesome-ipfs][Awesome-ipfs]]
+- [[https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf][merkle-crdts]]
+
+** Links bittorrent
+
+- [[http://www-igm.univ-mlv.fr/%7Edr/XPOSE2004/bitorrent/index.html][bittorrent univ mlv]]
+- [[https://www.bittorrent.org/beps/bep_0000.html][Index of beps]]
+- [[https://www.bittorrent.org/beps/bep_0003.html][bep03: bittorrent spec]]
+- [[https://wiki.theory.org/index.php/BitTorrentSpecification][bittorrent spec v1.0 (theory.org)]]
+- [[http://jonas.nitro.dk/bittorrent/bittorrent-rfc.html][bittorrent rfc]]
+- [[http://www.kristenwidman.com/blog/33/how-to-write-a-bittorrent-client-part-1/][How to write a bittorrent client]]
+
+** Links DHT
+
+- [[https://zestedesavoir.com/billets/3310/p2p-internals-3/][Zeste de savoir : p2p internals 3]]
+- [[https://www.youtube.com/watch?v=WeXRfWJ2snA][Wandida DHT Pastry Anne-Marie de Kermarrec]]
+  
+- [[https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf][Kademlia CSAIL Maymounkov]]
+- [[http://xlattice.sourceforge.net/components/protocol/kademlia/specs.html][Kademlia spec]]
+
+- [[https://en.wikipedia.org/wiki/Content_addressable_network][CAN (wikipedia)]]
+- [[https://en.wikipedia.org/wiki/Pastry_(DHT)][Pastry (wikipedia)]]
+- [[https://en.wikipedia.org/wiki/Tapestry_(DHT)][Tapestry (wikipedia)]]
+
+** Links CRDT
+
+- [[https://crdt.tech/][crdt.tech]]
+- [[https://archive.org/details/Microsoft_Research_Video_153540][Marc Shapiro Microsoft Research (archive.org)]]
+- [[https://github.com/alangibson/awesome-crdt][Awesome-crdt]]
+
+** Links Uncategorized
+
+- [[https://libp2p.io/][libp2p]]
+- [[https://noiseprotocol.org/noise.html][security on libp2p with noise protocol framework]]
+- [[https://github.com/libp2p/specs/tree/master/noise][noise github spec]]
+
+- Zeste de savoir p2p internals serie ( [[https://zestedesavoir.com/billets/3195/p2p-internals-1/][1]] | [[https://zestedesavoir.com/billets/3277/p2p-internals-2/][2]] | [[https://zestedesavoir.com/billets/3310/p2p-internals-3/][3]] | [[https://zestedesavoir.com/billets/3394/p2p-internals-4-dissequons-git/][4]] )
+
+- [[https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type][CRDT (wikipedia)]]
+
+- [[https://en.wikipedia.org/wiki/Uniform_Resource_Identifier][URI (wikipedia)]]
+- [[https://en.wikipedia.org/wiki/Uniform_Resource_Name][URN (wikipedia)]]
+- [[https://en.wikipedia.org/wiki/URL][URL (wikipedia)]]
+
+
+** Programs / Services used
+- Emacs
+- Orgmode
+- Reveal.js
+- Fleek
+- OBS
+- ffmpeg
+- Asciinema
+
+***  Questions ?

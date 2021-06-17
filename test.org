@@ -1,0 +1,24 @@
+#+author:
+#+options: toc:nil num:nil
+#+options: date:nil timestamp:nil
+#+title: IPFS
+#+REVEAL_THEME: black
+
+#+HTML_HEAD: <style type="text/css"> img {width: 100%} img[alt=bitcoin] {width: 50%}</style>
+
+
+# * Titre 1
+
+# ** test titre 1
+
+# une phrase
+
+* IPFS
+
+** Test
+
+# #+REVEAL_HTML: <script id="asciicast-FkZu5Rs4PtuOz1BURw9PP1Sn5" src="https://asciinema.org/a/FkZu5Rs4PtuOz1BURw9PP1Sn5.js" async></script>
+
+#+begin_export html
+<script id="asciicast-FkZu5Rs4PtuOz1BURw9PP1Sn5" src="https://asciinema.org/a/FkZu5Rs4PtuOz1BURw9PP1Sn5.js" async></script>
+#+end_export

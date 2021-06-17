@@ -1,0 +1,11 @@
+/* img { */
+/*     width: 100% */
+/* } */
+
+img[alt=bitcoin] {
+    width: 50%
+}
+
+img[alt=medium-high] {
+    width: 60%
+}
