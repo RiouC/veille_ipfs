@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>IPFS</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/black.css" id="theme"/>
+
+<link rel="stylesheet" type="text/css" href="/asciinema-player.css" />
+<link rel="stylesheet" type="text/css" href="./css/slides.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">IPFS</h1>
+</section>
+
+
+<section>
+<section id="slide-org1be5529">
+<h2 id="org1be5529">Sommaire</h2>
+<div class="outline-text-2" id="text-org1be5529">
+</div>
+<ul class="org-ul">
+<li><a id="org18d7f47"></a>I - Introduction<br /></li>
+<li><a id="orgfbd41fb"></a>II - What is wrong with the Internet ?<br /></li>
+<li><a id="org34d4697"></a>III - Basic Concepts<br /></li>
+<li><a id="org5f6bfb1"></a>IV - Basic Commands<br /></li>
+<li><a id="org971fe61"></a>V - Advanced Concepts<br /></li>
+<li><a id="org4b838d1"></a>VI - Practice makes perfect<br /></li>
+<li><a id="orgc771adb"></a>VII - IPFS: le futur ?<br /></li>
+<li><a id="org9581b94"></a>VIII - Links, resources &amp; Programs / Services used<br /></li>
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org69cd36f">
+<h2 id="org69cd36f">I - Introduction</h2>
+<div class="outline-text-2" id="text-org69cd36f">
+</div>
+</section>
+<section id="slide-org94e0613">
+<h3 id="org94e0613">Definition</h3>
+<p>
+IPFS = InterPlanetary File System
+</p>
+
+</section>
+<section id="slide-orgabded72">
+<h3 id="orgabded72">Protocol Labs</h3>
+<p>
+<a href="https://protocol.ai/">https://protocol.ai/</a>
+</p>
+
+<p>
+By Juan Benet in May 2014
+</p>
+
+
+<div id="org2c49f19" class="figure">
+<p><a href="images/Juan_Benet_headshot_small.png" src="images/Juan_Benet_headshot_small.png"><img src="images/Juan_Benet_headshot_small.png" alt="Juan_Benet_headshot_small.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org5550fdd">
+<h3 id="org5550fdd">Some of their creations</h3>
+<ul>
+<li>IPFS</li>
+<li>FileCoin</li>
+<li>CoinList</li>
+<li>libp2p</li>
+
+</ul>
+
+<p>
+<a href="https://blog.ycombinator.com/ipfs-coinlist-and-the-filecoin-ico-with-juan-benet-and-dalton-caldwell/">YCombinator interview (with transcript)</a>
+</p>
+
+</section>
+<section id="slide-orgdd55aeb">
+<h3 id="orgdd55aeb">Trivia</h3>
+<ul>
+<li>In 2018, Benet was named one of Fortune magazine's "40 under 40" in recognition of his work creating IPFS.</li>
+<li><p>
+J.Benet is a patron on patreon of the youtube channel Veritasium
+</p>
+
+
+<div id="org7f438d5" class="figure">
+<p><a href="images/jbenet_patreon_veritasium.png" src="images/jbenet_patreon_veritasium.png"><img src="images/jbenet_patreon_veritasium.png" alt="jbenet_patreon_veritasium.png" /></a>
+</p>
+</div></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org181d2e4">
+<h2 id="org181d2e4">II - What's wrong with the Internet ?</h2>
+<div class="outline-text-2" id="text-org181d2e4">
+</div>
+</section>
+<section id="slide-orgdc2762a">
+<h3 id="orgdc2762a">History</h3>
+<div class="outline-text-3" id="text-orgdc2762a">
+</div>
+</section>
+<section id="slide-orgf35a102">
+<h4 id="orgf35a102">First computers</h4>
+<p>
+Prog + Data -&gt; Data
+</p>
+
+</section>
+<section id="slide-orgbba62c3">
+<h4 id="orgbba62c3">Combining programs / timesharing</h4>
+<ul>
+<li>Multics</li>
+<li>Unix</li>
+<li>&#x2026;</li>
+
+</ul>
+
+<p>
+A sane way of sharing program and data
+</p>
+
+</section>
+<section id="slide-org78c0b1f">
+<h4 id="org78c0b1f">Mainframe / Terminals</h4>
+
+</section>
+<section id="slide-orgbcef736">
+<h4 id="orgbcef736">More mainframes, but linked</h4>
+<p>
+Beginning of networking
+</p>
+
+</section>
+<section id="slide-org2024ac3">
+<h4 id="org2024ac3">PCs (personal computers)</h4>
+
+</section>
+<section id="slide-org43d31ec">
+<h4 id="org43d31ec">Internet</h4>
+<p>
+Internet is the solution to link all the PCs together, like we did before with the mainframes.
+</p>
+
+</section>
+<section id="slide-orgb9021eb">
+<h4 id="orgb9021eb">The Web</h4>
+<p>
+Data transmission between computers is becoming widely available.
+</p>
+
+</section>
+<section id="slide-orgfbd4ee9">
+<h4 id="orgfbd4ee9">Web2.0</h4>
+<p>
+Programs are also transmitted with data from the server to the client.
+But now, the client is subservient to the server.
+</p>
+
+</section>
+<section id="slide-org9dcbf20">
+<h4 id="org9dcbf20">Certify data</h4>
+<ul>
+<li>Beginning of internet encryption</li>
+<li>Certificate authorities</li>
+<li>Blockchains</li>
+
+</ul>
+
+</section>
+<section id="slide-org643b3d3">
+<h4 id="org643b3d3">Patterns repeat</h4>
+
+</section>
+<section id="slide-org8e511ab">
+<h4 id="org8e511ab">Decentralized web</h4>
+<p>
+What if these links that refer to data were secured as well ?
+</p>
+
+</section>
+<section id="slide-org22a3780">
+<h3 id="org22a3780">IPFS</h3>
+<div class="outline-text-3" id="text-org22a3780">
+</div>
+</section>
+<section id="slide-orge1d6b0f">
+<h4 id="orge1d6b0f">Separation of the Internets</h4>
+
+</section>
+<section id="slide-orgff2d9cb">
+<h4 id="orgff2d9cb">A declaration of the independance of cyberspace</h4>
+<ul>
+<li><a href="https://www.eff.org/cyberspace-independence">eff</a></li>
+<li><a href="https://en.wikipedia.org/wiki/A_Declaration_of_the_Independence_of_Cyberspace">wikipedia</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orga12a4d2">
+<h4 id="orga12a4d2">Issues tackled</h4>
+<ul>
+<li>emerging networks</li>
+<li>links break</li>
+<li>huge inefficiencies</li>
+<li>bad security model</li>
+<li>no offline use</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbf2e28b">
+<h2 id="orgbf2e28b">III - Basic Concepts</h2>
+<div class="outline-text-2" id="text-orgbf2e28b">
+</div>
+</section>
+<section id="slide-org505bcd7">
+<h3 id="org505bcd7">What is it ?</h3>
+
+<div id="orgbd0ac20" class="figure">
+<p><a href="images/ipfs_stack.png" src="images/ipfs_stack.png"><img src="images/ipfs_stack.png" alt="ipfs_stack.png" /></a>
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgbbffa45">
+<h3 id="orgbbffa45">How it works</h3>
+
+<div id="org22b3a19" class="figure">
+<p><a href="images/ipfs_overview.png" alt="medium-high" src="images/ipfs_overview.png"><img src="images/ipfs_overview.png" alt="medium-high" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-orgddec590">
+<h3 id="orgddec590">Location-based vs Content-based</h3>
+<p>
+URL vs CID
+</p>
+
+<p>
+URL = Uniform Resource Locator
+</p>
+
+<div id="orgd74cb8a" class="figure">
+<p><a href="images/location_based.png" src="images/location_based.png"><img src="images/location_based.png" alt="location_based.png" /></a>
+</p>
+</div>
+
+<p>
+CID = Content Identifier
+</p>
+
+<div id="org73d835c" class="figure">
+<p><a href="images/content_based.png" src="images/content_based.png"><img src="images/content_based.png" alt="content_based.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-orge5ddaa5">
+<h3 id="orge5ddaa5">LifeCycle</h3>
+
+<div id="org49cf156" class="figure">
+<p><a href="images/lifecycle.png" src="images/lifecycle.png"><img src="images/lifecycle.png" alt="lifecycle.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org39509dd">
+<h3 id="org39509dd">Chunks</h3>
+
+<div id="org66ac388" class="figure">
+<p><a href="images/chunking.png" src="images/chunking.png"><img src="images/chunking.png" alt="chunking.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org6d0f2e4">
+<h3 id="org6d0f2e4"></h3>
+
+<div id="org52ecb84" class="figure">
+<p><a href="images/chunk_deduplication_1.png" src="images/chunk_deduplication_1.png"><img src="images/chunk_deduplication_1.png" alt="chunk_deduplication_1.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org84613e2">
+<h3 id="org84613e2"></h3>
+<p>
+We only have to store these chunks once.
+</p>
+
+
+<div id="orgd4e0556" class="figure">
+<p><a href="images/chunk_deduplication_2.png" src="images/chunk_deduplication_2.png"><img src="images/chunk_deduplication_2.png" alt="chunk_deduplication_2.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org5fd6015">
+<h3 id="org5fd6015"></h3>
+<aside class="notes">
+<p>
+We can download a file piecewise, checking each piece as we get it.
+We don't have to download the entire file first.
+</p>
+
+</aside>
+
+
+<div id="org0952aee" class="figure">
+<p><a href="images/chunk_piecewise_transfer.png" src="images/chunk_piecewise_transfer.png"><img src="images/chunk_piecewise_transfer.png" alt="chunk_piecewise_transfer.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org893bb00">
+<h3 id="org893bb00"></h3>
+<aside class="notes">
+<p>
+We can skip directly to the piece we care about.
+We can even chunk a file such that the chunks align with logical boundaries (e.g., video key frames).
+</p>
+
+</aside>
+
+
+<div id="org9d17ed9" class="figure">
+<p><a href="images/chunk_seeking.png" src="images/chunk_seeking.png"><img src="images/chunk_seeking.png" alt="chunk_seeking.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org1bebe58">
+<h3 id="org1bebe58"></h3>
+
+<div id="org6ed6336" class="figure">
+<p><a href="images/unixfs_merkle_tree.png" src="images/unixfs_merkle_tree.png"><img src="images/unixfs_merkle_tree.png" alt="unixfs_merkle_tree.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-orgea6284d">
+<h3 id="orgea6284d">Merkle {Tree, DAG, *}</h3>
+<p>
+DAG = directed acyclic graph
+</p>
+
+</section>
+<section id="slide-org8434f9d">
+<h3 id="org8434f9d">What is a Tree ?</h3>
+
+<div id="org7ac1aac" class="figure">
+<p><a href="images/arbre_1.png" src="images/arbre.png"><img src="images/arbre.png" alt="arbre.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org45f3718">
+<h3 id="org45f3718">What is a graph ?</h3>
+
+<div id="org97ba8a6" class="figure">
+<p><a href="images/simple_graph.jpg" src="images/simple_graph.png"><img src="images/simple_graph.png" alt="simple_graph.jpg" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org1535109">
+<h3 id="org1535109">A cyclic graph ?</h3>
+
+<div id="org53d65b2" class="figure">
+<p><a href="images/cyclic_graph.gif" src="images/cyclic_graph.png"><img src="images/cyclic_graph.png" alt="cyclic_graph.gif" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-orga921b37">
+<h3 id="orga921b37">A directed graph ?</h3>
+
+<div id="org0df2643" class="figure">
+<p><a href="images/directed_graph.png" src="images/directed_graph.png"><img src="images/directed_graph.png" alt="directed_graph.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-orga6fe0a2">
+<h3 id="orga6fe0a2">And a DAG ?</h3>
+
+<div id="orgbf288d1" class="figure">
+<p><a href="images/dag.png" src="images/dag.png"><img src="images/dag.png" alt="dag.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org2d3b1cc">
+<h3 id="org2d3b1cc">This is also a DAG</h3>
+
+<div id="org89775a8" class="figure">
+<p><a href="images/dag2.png" src="images/dag2.png"><img src="images/dag2.png" alt="dag2.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org3419f23">
+<h3 id="org3419f23"></h3>
+
+<div id="org272da13" class="figure">
+<p><a href="images/merkle_merkle_dag.png" src="images/merkle_merkle_dag.png"><img src="images/merkle_merkle_dag.png" alt="merkle_merkle_dag.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org92b6af0">
+<h3 id="org92b6af0">A real Merkle Tree</h3>
+
+<div id="org76674e2" class="figure">
+<p><a href="images/Hash_Tree.svg" src="images/Hash_Tree.svg"><img src="images/Hash_Tree.svg" alt="Hash_Tree.svg" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org1b178ed">
+<h3 id="org1b178ed">Gateway</h3>
+<p>
+A Gateway is a computer acting as a HTTP server and a local IPFS node at the same time.
+A client without a local ipfs node can send a request to the gateway, which will get the file from the swarm,
+and then send it back to the client.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgeb7c354">
+<h3 id="orgeb7c354"></h3>
+
+<div id="org41f3191" class="figure">
+<p><a href="images/gateways_diagrams.png" src="images/gateways_diagrams.png"><img src="images/gateways_diagrams.png" alt="gateways_diagrams.png" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org78a0710">
+<h3 id="org78a0710"></h3>
+<p>
+<a href="https://ipfs.github.io/public-gateway-checker/">Public Gateway Checker</a>
+</p>
+
+
+<div id="orgd271c1f" class="figure">
+<p><a href="images/gateways_public_checker.png" src="images/gateways_public_checker.png"><img src="images/gateways_public_checker.png" alt="gateways_public_checker.png" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org353a9fa">
+<h2 id="org353a9fa">IV - Basic Commands</h2>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgaaefb0d">
+<h2 id="orgaaefb0d">A. Installation</h2>
+<div class="outline-text-2" id="text-orgaaefb0d">
+</div>
+</section>
+<section id="slide-org113dbcc">
+<h3 id="org113dbcc">Links</h3>
+<p>
+<a href="https://github.com/ipfs/go-ipfs#install">https://github.com/ipfs/go-ipfs#install</a>
+<a href="https://github.com/ipfs/ipfs-desktop/releases">https://github.com/ipfs/ipfs-desktop/releases</a>
+</p>
+
+</section>
+<section id="slide-org83a421c">
+<h3 id="org83a421c"></h3>
+<p>
+<a href="https://asciinema.org/a/FkZu5Rs4PtuOz1BURw9PP1Sn5">asciinema</a>
+</p>
+
+
+<div id="org9e0ff17" class="figure">
+<p><a href="images/ipfs_install_pacman.gif" src="images/ipfs_install_pacman.gif"><img src="images/ipfs_install_pacman.gif" alt="ipfs_install_pacman.gif" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org4f1d134">
+<h2 id="org4f1d134">B. ifps init</h2>
+<div class="outline-text-2" id="text-org4f1d134">
+</div>
+</section>
+<section id="slide-orge68843e">
+<h3 id="orge68843e"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>ipfs init
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org3cd510a">
+<h3 id="org3cd510a"></h3>
+<p>
+<a href="https://asciinema.org/a/Y8zMADDEL66tX6e3McuFxCVoz">asciinema</a>
+</p>
+
+
+<div id="orgfbd66fb" class="figure">
+<p><a href="images/ipfs_init.gif" src="images/ipfs_init.gif"><img src="images/ipfs_init.gif" alt="ipfs_init.gif" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org88e9398">
+<h3 id="org88e9398"></h3>
+<p>
+<a href="https://asciinema.org/a/96t2sDJwIfFIbjskPcdS8KgUN">asciinema</a>
+</p>
+
+
+<div id="org8291cea" class="figure">
+<p><a href="images/ipfs_quickstart.gif" src="images/ipfs_quickstart.gif"><img src="images/ipfs_quickstart.gif" alt="ipfs_quickstart.gif" /></a>
+</p>
+</div>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgbeedd1c">
+<h2 id="orgbeedd1c">C. ipfs add</h2>
+<div class="outline-text-2" id="text-orgbeedd1c">
+</div>
+</section>
+<section id="slide-org6371da4">
+<h3 id="org6371da4"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>ipfs add file
+ipfs add -r directory
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgb9927cc">
+<h3 id="orgb9927cc"></h3>
+<p>
+<a href="https://asciinema.org/a/Nw1rDd3EyNJdOueqXGFGAwVz0">asciinema</a>
+</p>
+
+
+<div id="org6a1ced7" class="figure">
+<p><a href="images/ipfs_add.gif" src="images/ipfs_add.gif"><img src="images/ipfs_add.gif" alt="ipfs_add.gif" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org54cc3a1">
+<h2 id="org54cc3a1">ipfs ls</h2>
+<div class="outline-text-2" id="text-org54cc3a1">
+</div>
+</section>
+<section id="slide-orgb680a92">
+<h3 id="orgb680a92"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>ipfs ls directory_hash
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgecdc5e2">
+<h3 id="orgecdc5e2"></h3>
+<p>
+<a href="https://asciinema.org/a/a7G3YMmqIAx3qgPf23alrnSIR">asciinema</a>
+</p>
+
+
+<div id="orgfce993e" class="figure">
+<p><a href="images/ipfs_ls.gif" src="images/ipfs_ls.gif"><img src="images/ipfs_ls.gif" alt="ipfs_ls.gif" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgddeffd7">
+<h2 id="orgddeffd7">ipfs cat</h2>
+<div class="outline-text-2" id="text-orgddeffd7">
+</div>
+</section>
+<section id="slide-org35b7bb2">
+<h3 id="org35b7bb2"></h3>
+<pre  class="example">
+ipfs cat hash
+</pre>
+
+</section>
+<section id="slide-org4cfb95f">
+<h3 id="org4cfb95f"></h3>
+<p>
+<a href="https://asciinema.org/a/BrgWdcmlVfWb7vYqK0gKlSfcO">asciinema</a>
+</p>
+
+
+<div id="org977681d" class="figure">
+<p><a href="images/ipfs_cat.gif" src="images/ipfs_cat.gif"><img src="images/ipfs_cat.gif" alt="ipfs_cat.gif" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaa95ce4">
+<h2 id="orgaa95ce4">ipfs daemon</h2>
+<div class="outline-text-2" id="text-orgaa95ce4">
+</div>
+</section>
+<section id="slide-org3c4528c">
+<h3 id="org3c4528c"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>ipfs daemon
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org1cfcfba">
+<h3 id="org1cfcfba"></h3>
+<p>
+<a href="https://asciinema.org/a/T2XZdDQ9QFuyiFSl0W42vYkYD">asciinema</a>
+</p>
+
+
+<div id="org0af01a9" class="figure">
+<p><a href="images/ipfs_daemon.gif" src="images/ipfs_daemon.gif"><img src="images/ipfs_daemon.gif" alt="ipfs_daemon.gif" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org43860a0">
+<h2 id="org43860a0">ipfs id</h2>
+<div class="outline-text-2" id="text-org43860a0">
+</div>
+</section>
+<section id="slide-orga16c034">
+<h3 id="orga16c034"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>ipfs id
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org9f27daa">
+<h3 id="org9f27daa"></h3>
+<p>
+<a href="https://asciinema.org/a/U9oDvgBYrmglstecsFurS3XS1">asciinema</a>
+</p>
+
+
+<div id="orga8f44f9" class="figure">
+<p><a href="images/ipfs_id.gif" src="images/ipfs_id.gif"><img src="images/ipfs_id.gif" alt="ipfs_id.gif" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org88efcaa">
+<h2 id="org88efcaa">ipfs swarm</h2>
+<div class="outline-text-2" id="text-org88efcaa">
+</div>
+</section>
+<section id="slide-orgbd31394">
+<h3 id="orgbd31394"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>ipfs swarm peers
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org81ad521">
+<h3 id="org81ad521"></h3>
+<p>
+<a href="https://asciinema.org/a/AGW6PPHJRKVbbzzRglHKjGANe">asciinema</a>
+</p>
+
+
+<div id="orgfc411a5" class="figure">
+<p><a href="images/ipfs_swarm.gif" src="images/ipfs_swarm.gif"><img src="images/ipfs_swarm.gif" alt="ipfs_swarm.gif" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org8beb244">
+<h3 id="org8beb244"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell" ><code trim>ipfs id hash_of_a_peer
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org68884d4">
+<h3 id="org68884d4"></h3>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org73d39d0">
+<h2 id="org73d39d0">D. ipfs get</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org91b30a4">
+<h2 id="org91b30a4">E. ipfs pin</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org5fa14dd">
+<h2 id="org5fa14dd">V - Advanced Concepts</h2>
+<div class="outline-text-2" id="text-org5fa14dd">
+</div>
+</section>
+<section id="slide-orgef50b3d">
+<h3 id="orgef50b3d"><a href="https://multiformats.io/">https://multiformats.io/</a></h3>
+
+</section>
+</section>
+<section>
+<section id="slide-org053803e">
+<h2 id="org053803e">VI - Practice makes perfect</h2>
+<div class="outline-text-2" id="text-org053803e">
+</div>
+</section>
+<section id="slide-org2ae4901">
+<h3 id="org2ae4901">Browser upgrade path</h3>
+<ul>
+<li class="on"><code>[X]</code> go-ipfs</li>
+<li class="on"><code>[X]</code> http-to-ipfs gateway</li>
+<li class="on"><code>[X]</code> go-ipfs / webui / desktop</li>
+<li class="on"><code>[X]</code> js-api / js-ipfs</li>
+<li class="on"><code>[X]</code> browser extensions</li>
+<li class="trans"><code>[-]</code> native in browsers</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org92e2664">
+<h2 id="org92e2664">VII - IPFS: le futur ?</h2>
+</section>
+<section id="slide-orge693e14">
+<h3 id="orge693e14">Wikipedia</h3>
+<ul>
+<li><a href="https://en.wikipedia-on-ipfs.org/wiki/">wikipedia on ipfs</a></li>
+<li><a href="https://blog.ipfs.io/2021-05-31-distributed-wikipedia-mirror-update/">blog post explanation</a></li>
+<li><a href="https://github.com/ipfs/distributed-wikipedia-mirror">github</a></li>
+
+</ul>
+
+</section>
+<section id="slide-org20759b6">
+<h3 id="org20759b6">Remix</h3>
+<p>
+mettre image remix deploy to ipfs
+</p>
+
+</section>
+<section id="slide-orgd0482b8">
+<h3 id="orgd0482b8">Fleek</h3>
+<ul>
+<li><a href="https://fleek.co/">Fleek</a></li>
+<li><a href="https://blog.fleek.co/posts/fleek-create-react-app">Fleek create-react-app in &lt; 10 min</a></li>
+<li><a href="http://docs.fleek.co.ipns.localhost:8080/tutorials/hosting/">Fleek Framework guides</a></li>
+
+</ul>
+
+</section>
+<section id="slide-org366c445">
+<h3 id="org366c445">Les dapps decentralisées avec données statiques lourdes</h3>
+
+</section>
+<section id="slide-orgac5e049">
+<h3 id="orgac5e049">NFT storage</h3>
+<ul>
+<li><a href="https://nft.storage/">https://nft.storage/</a></li>
+<li><a href="https://nftschool.dev/">https://nftschool.dev/</a> (<a href="https://github.com/protocol/nft-website">gh</a>)</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org6583a0d">
+<h3 id="org6583a0d">Search</h3>
+<ul>
+<li><a href="https://ipfs-search.com/#/search">https://ipfs-search.com/#/search</a></li>
+<li><a href="https://thegraph.com/">TheGraph</a></li>
+
+</ul>
+
+</section>
+<section id="slide-org829da49">
+<h3 id="org829da49">Database</h3>
+<ul>
+<li><a href="https://orbitdb.org/">https://orbitdb.org/</a> (<a href="https://github.com/orbitdb/orbit-db">gh</a>)</li>
+<li><a href="https://textile.io/">https://textile.io/</a> (<a href="https://github.com/textileio">gh</a>)</li>
+<li><a href="https://ipfs.io/ipfs/QmVWQMLUM3o4ZFbLtLMS1PMLfodeEeBkBPR2a2R3hqQ337/#/">TodoMVC</a></li>
+
+</ul>
+
+</section>
+<section id="slide-org86d7668">
+<h3 id="org86d7668">chat</h3>
+<ul>
+<li><a href="https://orbit.chat/">https://orbit.chat/</a></li>
+<li><a href="https://berty.tech/">https://berty.tech/</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgbe16801">
+<h3 id="orgbe16801">Files</h3>
+<ul>
+<li><a href="https://brig.readthedocs.io/en/latest/">Brig</a></li>
+<li><a href="https://enzypt.io/zPuhMAQ2f89C4an6M2Ydbvw3wOpKYCvn/7QiVWJoK5a-ZSYXYJKYl_YuMQZQNe7-oibdZg1c5qDw">Buy and sell your files</a></li>
+
+</ul>
+
+</section>
+<section id="slide-org34e624b">
+<h3 id="org34e624b">FPS</h3>
+<ul>
+<li><a href="https://ipfs-fps.com/">https://ipfs-fps.com/</a></li>
+
+</ul>
+
+</section>
+<section id="slide-org81f7052">
+<h3 id="org81f7052">Further improvement</h3>
+<ul>
+<li><a href="https://wiki.openzim.org/wiki/OpenZIM">Web-based Zim reader</a></li>
+<li><a href="https://akasha.world/">Akasha</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orge5e7c48">
+<h3 id="orge5e7c48">And many more</h3>
+
+<div id="orgf367f44" class="figure">
+<p><a href="images/ipfs-applications-diagram.png" src="images/ipfs-applications-diagram.png"><img src="images/ipfs-applications-diagram.png" alt="ipfs-applications-diagram.png" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6a10423">
+<h2 id="org6a10423">VIII - Links, resources &amp; Programs / Services used</h2>
+<div class="outline-text-2" id="text-org6a10423">
+</div>
+</section>
+<section id="slide-orgcc3cdd2">
+<h3 id="orgcc3cdd2">Links IPFS</h3>
+<ul>
+<li><a href="https://ipfs.io/">IPFS</a></li>
+<li><a href="https://blog.ipfs.io/">Blog</a></li>
+<li><a href="https://discuss.ipfs.io/">Forum</a></li>
+<li><a href="https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew">YouTube</a></li>
+<li><a href="https://github.com/protocol">Protocol Labs · GitHub</a></li>
+<li><a href="https://blogchaincafe.com/ipfs-et-la-decentralisation-du-web">Blockchaincafe</a></li>
+<li><a href="https://www.youtube.com/watch?v=HUVmypx9HGI">Stanford Seminar - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=5Uj6uR3fp-U">Simply Explained - YouTube</a></li>
+<li><a href="https://github.com/ipfs/awesome-ipfs">Awesome-ipfs</a></li>
+<li><a href="https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf">merkle-crdts</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgcf15de5">
+<h3 id="orgcf15de5">Links bittorrent</h3>
+<ul>
+<li><a href="http://www-igm.univ-mlv.fr/%7Edr/XPOSE2004/bitorrent/index.html">bittorrent univ mlv</a></li>
+<li><a href="https://www.bittorrent.org/beps/bep_0000.html">Index of beps</a></li>
+<li><a href="https://www.bittorrent.org/beps/bep_0003.html">bep03: bittorrent spec</a></li>
+<li><a href="https://wiki.theory.org/index.php/BitTorrentSpecification">bittorrent spec v1.0 (theory.org)</a></li>
+<li><a href="http://jonas.nitro.dk/bittorrent/bittorrent-rfc.html">bittorrent rfc</a></li>
+<li><a href="http://www.kristenwidman.com/blog/33/how-to-write-a-bittorrent-client-part-1/">How to write a bittorrent client</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgecf875b">
+<h3 id="orgecf875b">Links DHT</h3>
+<ul>
+<li><a href="https://zestedesavoir.com/billets/3310/p2p-internals-3/">Zeste de savoir : p2p internals 3</a></li>
+<li><a href="https://www.youtube.com/watch?v=WeXRfWJ2snA">Wandida DHT Pastry Anne-Marie de Kermarrec</a></li>
+
+<li><a href="https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf">Kademlia CSAIL Maymounkov</a></li>
+<li><a href="http://xlattice.sourceforge.net/components/protocol/kademlia/specs.html">Kademlia spec</a></li>
+
+<li><a href="https://en.wikipedia.org/wiki/Content_addressable_network">CAN (wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pastry_(DHT)">Pastry (wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Tapestry_(DHT)">Tapestry (wikipedia)</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orga5b7276">
+<h3 id="orga5b7276">Links CRDT</h3>
+<ul>
+<li><a href="https://crdt.tech/">crdt.tech</a></li>
+<li><a href="https://archive.org/details/Microsoft_Research_Video_153540">Marc Shapiro Microsoft Research (archive.org)</a></li>
+<li><a href="https://github.com/alangibson/awesome-crdt">Awesome-crdt</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgad67a87">
+<h3 id="orgad67a87">Links Uncategorized</h3>
+<ul>
+<li><a href="https://libp2p.io/">libp2p</a></li>
+<li><a href="https://noiseprotocol.org/noise.html">security on libp2p with noise protocol framework</a></li>
+<li><a href="https://github.com/libp2p/specs/tree/master/noise">noise github spec</a></li>
+
+<li>Zeste de savoir p2p internals serie ( <a href="https://zestedesavoir.com/billets/3195/p2p-internals-1/">1</a> | <a href="https://zestedesavoir.com/billets/3277/p2p-internals-2/">2</a> | <a href="https://zestedesavoir.com/billets/3310/p2p-internals-3/">3</a> | <a href="https://zestedesavoir.com/billets/3394/p2p-internals-4-dissequons-git/">4</a> )</li>
+
+<li><a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT (wikipedia)</a></li>
+
+<li><a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI (wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Uniform_Resource_Name">URN (wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/URL">URL (wikipedia)</a></li>
+
+</ul>
+
+
+</section>
+<section id="slide-org4a843d3">
+<h3 id="org4a843d3">Programs / Services used</h3>
+<ul>
+<li>Emacs</li>
+<li>Orgmode</li>
+<li>Reveal.js</li>
+<li>Fleek</li>
+<li>OBS</li>
+<li>ffmpeg</li>
+<li>Asciinema</li>
+
+</ul>
+
+</section>
+<section id="slide-org401968f">
+<h4 id="org401968f">Questions ?</h4>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/markdown/markdown.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown,RevealZoom,RevealNotes],
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+]
+});
+
+
+</script>
+</body>
+</html>
