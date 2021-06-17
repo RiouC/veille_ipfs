@@ -33,6 +33,7 @@ https://protocol.ai/
 
 By Juan Benet in May 2014
 
+#+ATTR_HTML: :src images/Juan_Benet_headshot_small.png
 [[file:images/Juan_Benet_headshot_small.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/Juan_Benet_headshot_small.png]]
 
 ** Some of their creations
@@ -49,6 +50,7 @@ By Juan Benet in May 2014
 - In 2018, Benet was named one of Fortune magazine's "40 under 40" in recognition of his work creating IPFS.
 - J.Benet is a patron on patreon of the youtube channel Veritasium
 
+  #+ATTR_HTML: :src images/jbenet_patreon_veritasium.png
   [[file:images/jbenet_patreon_veritasium.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/jbenet_patreon_veritasium.png]]
 
 * II - What's wrong with the Internet ?
@@ -121,12 +123,13 @@ What if these links that refer to data were secured as well ?
 
 ** What is it ?
 
+#+ATTR_HTML: :src images/ipfs_stack.png
 [[file:images/ipfs_stack.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_stack.png]]
 
 
 ** How it works
 
-#+ATTR_HTML: :alt medium-high
+#+ATTR_HTML: :alt medium-high :src images/ipfs_overview.png
 [[file:images/ipfs_overview.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_overview.png]]
 
 ** Location-based vs Content-based
@@ -134,27 +137,33 @@ What if these links that refer to data were secured as well ?
 URL vs CID
 
 URL = Uniform Resource Locator
+#+ATTR_HTML: :src images/location_based.png
 [[file:images/location_based.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/location_based.png]]
 
 CID = Content Identifier
+#+ATTR_HTML: :src images/content_based.png
 [[file:images/content_based.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/content_based.png]]
 
 ** LifeCycle
 
+#+ATTR_HTML: :src images/lifecycle.png
 [[file:images/lifecycle.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/lifecycle.png]]
 
 ** Chunks
 
+#+ATTR_HTML: :src images/chunking.png
 [[file:images/chunking.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunking.png]]
 
 ** 
 
+#+ATTR_HTML: :src images/chunk_deduplication_1.png
 [[file:images/chunk_deduplication_1.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_deduplication_1.png]]
 
 ** 
 
 We only have to store these chunks once.
 
+#+ATTR_HTML: :src images/chunk_deduplication_2.png
 [[file:images/chunk_deduplication_2.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_deduplication_2.png]]
 
 ** 
@@ -164,6 +173,7 @@ We can download a file piecewise, checking each piece as we get it.
 We don't have to download the entire file first.
 #+end_notes
 
+#+ATTR_HTML: :src images/chunk_piecewise_transfer.png
 [[file:images/chunk_piecewise_transfer.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_piecewise_transfer.png]]
 
 ** 
@@ -173,10 +183,12 @@ We don't have to download the entire file first.
  We can even chunk a file such that the chunks align with logical boundaries (e.g., video key frames).
 #+end_notes
 
+#+ATTR_HTML: :src images/chunk_seeking.png
 [[file:images/chunk_seeking.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/chunk_seeking.png]]
 
 ** 
 
+#+ATTR_HTML: :src images/unixfs_merkle_tree.png
 [[file:images/unixfs_merkle_tree.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/unixfs_merkle_tree.png]]
 
 ** Merkle {Tree, DAG, *}
@@ -185,34 +197,42 @@ DAG = directed acyclic graph
 
 ** What is a Tree ?
 
+#+ATTR_HTML: :src images/arbre.png
 [[file:images/arbre_1.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/arbre.png]]
 
 ** What is a graph ?
 
+#+ATTR_HTML: :src images/simple_graph.png
 [[file:images/simple_graph.jpg][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/simple_graph.jpg]]
 
 ** A cyclic graph ?
 
+#+ATTR_HTML: :src images/cyclic_graph.png
 [[file:images/cyclic_graph.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/cyclic_graph.gif]]
 
 ** A directed graph ?
 
+#+ATTR_HTML: :src images/directed_graph.png
 [[file:images/directed_graph.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/directed_graph.png]]
 
 ** And a DAG ?
 
+#+ATTR_HTML: :src images/dag.png
 [[file:images/dag.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/dag.png]]
 
 ** This is also a DAG
 
+#+ATTR_HTML: :src images/dag2.png
 [[file:images/dag2.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/dag2.png]]
 
 ** 
 
+#+ATTR_HTML: :src images/merkle_merkle_dag.png
 [[file:images/merkle_merkle_dag.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/merkle_merkle_dag.png]]
 
 ** A real Merkle Tree
 
+#+ATTR_HTML: :src images/Hash_Tree.svg
 [[file:images/Hash_Tree.svg][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/Hash_Tree.svg]]
 
 ** Gateway
@@ -227,12 +247,14 @@ https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
 
 ** 
 
+#+ATTR_HTML: :src images/gateways_diagrams.png
 [[file:images/gateways_diagrams.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/gateways_diagrams.png]]
 
 ** 
 
 [[https://ipfs.github.io/public-gateway-checker/][Public Gateway Checker]]
 
+#+ATTR_HTML: :src images/gateways_public_checker.png
 [[file:images/gateways_public_checker.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/gateways_public_checker.png]]
 
 * IV - Basic Commands
@@ -249,6 +271,7 @@ https://github.com/ipfs/ipfs-desktop/releases
 
 [[https://asciinema.org/a/FkZu5Rs4PtuOz1BURw9PP1Sn5][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_install_pacman.gif
 [[file:images/ipfs_install_pacman.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_install_pacman.gif]]
 
 * B. ifps init
@@ -263,12 +286,14 @@ ipfs init
 
 [[https://asciinema.org/a/Y8zMADDEL66tX6e3McuFxCVoz][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_init.gif
 [[file:images/ipfs_init.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_init.gif]]
 
 ** 
 
 [[https://asciinema.org/a/96t2sDJwIfFIbjskPcdS8KgUN][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_quickstart.gif
 [[file:images/ipfs_quickstart.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_quickstart.gif]]
 
 
@@ -286,6 +311,7 @@ ipfs init
 
 [[https://asciinema.org/a/Nw1rDd3EyNJdOueqXGFGAwVz0][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_add.gif
 [[file:images/ipfs_add.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_add.gif]]
 
 * ipfs ls
@@ -300,6 +326,7 @@ ipfs ls directory_hash
 
 [[https://asciinema.org/a/a7G3YMmqIAx3qgPf23alrnSIR][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_ls.gif
 [[file:images/ipfs_ls.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_ls.gif]]
 
 * ipfs cat
@@ -314,6 +341,7 @@ ipfs cat hash
 
 [[https://asciinema.org/a/BrgWdcmlVfWb7vYqK0gKlSfcO][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_cat.gif
 [[file:images/ipfs_cat.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_cat.gif]]
 
 * ipfs daemon
@@ -328,6 +356,7 @@ ipfs daemon
 
 [[https://asciinema.org/a/T2XZdDQ9QFuyiFSl0W42vYkYD][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_daemon.gif
 [[file:images/ipfs_daemon.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_daemon.gif]]
 
 * ipfs id
@@ -342,6 +371,7 @@ ipfs id
 
 [[https://asciinema.org/a/U9oDvgBYrmglstecsFurS3XS1][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_id.gif
 [[file:images/ipfs_id.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_id.gif]]
 
 * ipfs swarm
@@ -356,6 +386,7 @@ ipfs swarm peers
 
 [[https://asciinema.org/a/AGW6PPHJRKVbbzzRglHKjGANe][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_swarm.gif
 [[file:images/ipfs_swarm.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_swarm.gif]]
 
 ** 
@@ -369,9 +400,6 @@ ipfs id hash_of_a_peer
 
 
 * D. ipfs get
-
-** test cargo
-hello cargo
 
 * E. ipfs pin
 
@@ -390,16 +418,6 @@ hello cargo
 - [X] browser extensions
 - [-] native in browsers
 
-** Variables and mutability
-
-#+begin_src rust
-fn main() {
-    let mut x = 5;
-    println!("The value of x is: {}", x);
-    x = 6;
-    println!("The value of x is: {}", x);
-}
-#+end_src
 
 * VII - IPFS: le futur ?
 
@@ -418,6 +436,10 @@ Non, c'est le présent !
 mettre image remix deploy to ipfs
 
 ** Fleek
+
+- [[https://fleek.co/][Fleek]]
+- [[https://blog.fleek.co/posts/fleek-create-react-app][Fleek create-react-app in < 10 min]]
+- [[http://docs.fleek.co.ipns.localhost:8080/tutorials/hosting/][Fleek Framework guides]]
 
 ** Les dapps decentralisées avec données statiques lourdes
 
@@ -459,6 +481,7 @@ mettre image remix deploy to ipfs
   
 ** And many more
 
+#+ATTR_HTML: :src images/ipfs-applications-diagram.png
 [[file:images/ipfs-applications-diagram.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs-applications-diagram.png]]
 
 * VIII - Links, resources & Programs / Services used
