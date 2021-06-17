@@ -235,6 +235,11 @@ DAG = directed acyclic graph
 #+ATTR_HTML: :src images/Hash_Tree.svg
 [[file:images/Hash_Tree.svg][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/Hash_Tree.svg]]
 
+** 
+
+#+ATTR_HTML: :src images/unixfs_merkle_dag.png
+[[file:images/unixfs_merkle_dag.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/unixfs_merkle_dag.png]]
+
 ** Gateway
 
 A Gateway is a computer acting as a HTTP server and a local IPFS node at the same time.
@@ -303,8 +308,8 @@ ipfs init
 ** 
 
 #+begin_src shell
-  ipfs add file
-  ipfs add -r directory
+  ipfs add <file>
+  ipfs add -r <directory>
 #+end_src
 
 ** 
@@ -319,7 +324,7 @@ ipfs init
 ** 
 
 #+begin_src shell
-ipfs ls directory_hash
+ipfs ls <directory_cid>
 #+end_src
 
 ** 
@@ -334,7 +339,7 @@ ipfs ls directory_hash
 ** 
 
 #+begin_src 
-ipfs cat hash
+ipfs cat <file_cid>
 #+end_src
 
 ** 
@@ -364,7 +369,7 @@ ipfs daemon
 ** 
 
 #+begin_src shell
-ipfs id
+ipfs id <hash_of_a_peer>
 #+end_src
 
 ** 
@@ -389,19 +394,37 @@ ipfs swarm peers
 #+ATTR_HTML: :src images/ipfs_swarm.gif
 [[file:images/ipfs_swarm.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_swarm.gif]]
 
+* D. ipfs get
+
 ** 
 
 #+begin_src shell
-ipfs id hash_of_a_peer
+ipfs get <cid>
 #+end_src
 
 ** 
 
+[[https://asciinema.org/a/zeX2zXSsrs5h4jb9BSGyF6rzs][asciinema]]
 
+#+ATTR_HTML: :src images/ipfs_get.gif
+[[file:images/ipfs_get.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_get.gif]]
 
-* D. ipfs get
 
 * E. ipfs pin
+
+** 
+
+#+begin_src shell
+  ipfs pin add
+  ipfs pin ls
+#+end_src
+
+** 
+
+[[https://asciinema.org/a/93ouTibKknyK1bB8eF4EINKRz][asciinema]]
+
+#+ATTR_HTML: :src images/ipfs_pin.gif
+[[file:images/ipfs_pin.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_pin.gif]]
 
 * V - Advanced Concepts
 
