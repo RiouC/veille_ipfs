@@ -432,7 +432,11 @@ ipfs get <cid>
 
 [[https://docs.google.com/presentation/d/1wyrTNTERJV23R7PyLrNloBauygdq1SXerijvEUG62xI/edit#slide=id.g62101298e7_9_382][Gdoc]]
 
+** 
+
 ** DHT
+
+DHT = Distributed Hash Table
 
 - [[https://zestedesavoir.com/billets/3310/p2p-internals-3/][Zeste de savoir : p2p internals 3]]
 - [[https://www.youtube.com/watch?v=WeXRfWJ2snA][Wandida DHT Pastry Anne-Marie de Kermarrec]]
@@ -500,12 +504,6 @@ Non, c'est le présent !
 #+ATTR_HTML: :src images/functional-dapp-architecture-ipfs.png
 [[file:images/functional-dapp-architecture-ipfs.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/functional-dapp-architecture-ipfs.png]]
 
-** NFT storage
-
-- https://nft.storage/
-- https://nftschool.dev/ ([[https://github.com/protocol/nft-website][gh]])
-
-
 ** Search
 
 - https://ipfs-search.com/#/search
@@ -521,6 +519,12 @@ Non, c'est le présent !
 - [[https://brig.readthedocs.io/en/latest/][Brig]]
 - [[https://enzypt.io/zPuhMAQ2f89C4an6M2Ydbvw3wOpKYCvn/7QiVWJoK5a-ZSYXYJKYl_YuMQZQNe7-oibdZg1c5qDw][Buy and sell your files]]
   
+** NFT storage
+
+- https://nft.storage/
+- https://nftschool.dev/ ([[https://github.com/protocol/nft-website][gh]])
+
+
 ** FPS
 
 - https://ipfs-fps.com/
@@ -602,4 +606,4 @@ Non, c'est le présent !
 - convert
 - Asciinema
 
-***  Questions ?
+*  Questions ?
