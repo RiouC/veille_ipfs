@@ -17,7 +17,7 @@
 **** III - Basic Concepts
 **** IV - Basic Commands
 **** V - Advanced Concepts
-**** VI - Practice makes perfect
+**** VI - Roadmap
 **** VII - IPFS: le futur ?
 **** VIII - Links, resources & Programs / Services used
 
