@@ -202,12 +202,12 @@ DAG = directed acyclic graph
 
 ** What is a graph ?
 
-#+ATTR_HTML: :src images/simple_graph.png
+#+ATTR_HTML: :src images/simple_graph.jpg
 [[file:images/simple_graph.jpg][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/simple_graph.jpg]]
 
 ** A cyclic graph ?
 
-#+ATTR_HTML: :src images/cyclic_graph.png
+#+ATTR_HTML: :src images/cyclic_graph.gif
 [[file:images/cyclic_graph.gif][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/cyclic_graph.gif]]
 
 ** A directed graph ?
@@ -467,7 +467,16 @@ Non, c'est le présent !
   
 ** Remix
 
-mettre image remix deploy to ipfs
+#+ATTR_HTML: :src images/remix_publish_from_compiler_button.png
+[[file:images/remix_publish_from_compiler_button.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/remix_publish_from_compiler_button.png]]
+
+#+ATTR_HTML: :src images/remix_publish_from_compiler_modal.png
+[[file:images/remix_publish_from_compiler_modal.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/remix_publish_from_compiler_modal.png]]
+
+** 
+
+#+ATTR_HTML: :src images/remix_publish_from_deploy_checkbox.png
+[[file:images/remix_publish_from_deploy_checkbox.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/remix_publish_from_deploy_checkbox.png]]
 
 ** Fleek
 
@@ -475,7 +484,21 @@ mettre image remix deploy to ipfs
 - [[https://blog.fleek.co/posts/fleek-create-react-app][Fleek create-react-app in < 10 min]]
 - [[http://docs.fleek.co.ipns.localhost:8080/tutorials/hosting/][Fleek Framework guides]]
 
+** Database
+
+- https://orbitdb.org/ ([[https://github.com/orbitdb/orbit-db][gh]])
+- https://textile.io/ ([[https://github.com/textileio][gh]])
+- [[https://ipfs.io/ipfs/QmVWQMLUM3o4ZFbLtLMS1PMLfodeEeBkBPR2a2R3hqQ337/#/][TodoMVC]]
+
 ** Les dapps decentralisées avec données statiques lourdes
+
+#+ATTR_HTML: :src images/functional-dapp-architecture.png
+[[file:images/functional-dapp-architecture.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/functional-dapp-architecture.png]]
+
+** 
+
+#+ATTR_HTML: :src images/functional-dapp-architecture-ipfs.png
+[[file:images/functional-dapp-architecture-ipfs.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/functional-dapp-architecture-ipfs.png]]
 
 ** NFT storage
 
@@ -487,12 +510,6 @@ mettre image remix deploy to ipfs
 
 - https://ipfs-search.com/#/search
 - [[https://thegraph.com/][TheGraph]]
-
-** Database
-
-- https://orbitdb.org/ ([[https://github.com/orbitdb/orbit-db][gh]])
-- https://textile.io/ ([[https://github.com/textileio][gh]])
-- [[https://ipfs.io/ipfs/QmVWQMLUM3o4ZFbLtLMS1PMLfodeEeBkBPR2a2R3hqQ337/#/][TodoMVC]]
 
 ** chat
 
@@ -582,6 +599,7 @@ mettre image remix deploy to ipfs
 - Fleek
 - OBS
 - ffmpeg
+- convert
 - Asciinema
 
 ***  Questions ?
