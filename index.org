@@ -428,11 +428,45 @@ ipfs get <cid>
 
 * V - Advanced Concepts
 
-** https://multiformats.io/
+** Multiformats
 
-[[https://docs.google.com/presentation/d/1wyrTNTERJV23R7PyLrNloBauygdq1SXerijvEUG62xI/edit#slide=id.g62101298e7_9_382][Gdoc]]
+- https://multiformats.io/ ( [[https://github.com/multiformats][gh]] )
+- [[https://docs.google.com/presentation/d/1wyrTNTERJV23R7PyLrNloBauygdq1SXerijvEUG62xI/edit#slide=id.g62101298e7_9_382][Gdoc]]
+
+** Multicodec
+
+A fixed number is assigned to a protocol, format, concept, ...
 
 ** 
+
+[[https://ipfs.io/ipfs/QmXec1jjwzxWJoNbxQF5KffL8q6hFXm9QwUGaa3wKGk6dT/#title=Multicodecs&src=https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv][Viewer]]
+
+#+ATTR_HTML: :src images/multicodec.png
+[[file:images/multicodec.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/multicodec.png]]
+
+** Multihash
+
+Triple of (hash function, hash length, hash digest).
+
+#+ATTR_HTML: :src images/multihash.png
+[[file:images/multihash.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/multihash.png]]
+
+** Multibase
+
+#+ATTR_HTML: :src images/multibase.png
+[[file:images/multibase.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/multibase.png]]
+
+** 
+
+#+ATTR_HTML: :src images/base58_Q.png
+[[file:images/base58_Q.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/base58_Q.png]]
+
+** Cluster
+
+[[https://cluster.ipfs.io/][IPFS Cluster]]
+
+#+ATTR_HTML: :src images/ipfs_cluster.png
+[[file:images/ipfs_cluster.png][file:/media/PNYProElite/etudes/alyra/veille_ipfs/images/ipfs_cluster.png]]
 
 ** DHT
 
@@ -487,6 +521,12 @@ Non, c'est le présent !
 - [[https://fleek.co/][Fleek]]
 - [[https://blog.fleek.co/posts/fleek-create-react-app][Fleek create-react-app in < 10 min]]
 - [[http://docs.fleek.co.ipns.localhost:8080/tutorials/hosting/][Fleek Framework guides]]
+
+** Upload
+
+- [[https://pinata.cloud/][Pinata]]
+- [[https://www.eternum.io/][Eternum]]
+
 
 ** Database
 
